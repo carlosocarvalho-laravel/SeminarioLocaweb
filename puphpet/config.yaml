@@ -193,6 +193,7 @@ php:
             - fpm
             - gd
             - mbstring
+            - memcached
         pear: {  }
         pecl:
             - PDO_MYSQL
@@ -200,7 +201,6 @@ php:
             - Fileinfo
             - zip
             - json
-            - memcached
     ini:
         display_errors: 'On'
         error_reporting: '-1'
