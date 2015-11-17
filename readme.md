@@ -4,6 +4,14 @@ Bem vindo palestrnte, esse repositório contem o tema base para os slides do Sem
 encontrará toda a estrutura necessária para desenvolver seus slides de forma simples e permitindo total interatividade
 aos participantes do evento.
 
+## Instalando as Dependencias
+
+Para instalar as dependencias dos projeto simplesmente execute:
+
+```bash
+composer install
+```
+
 ## Rodando a Aplicação
 
 Esse repositório possui receitas de provisionamento com Vagrant criadas usando PuPHPet, portanto para rodar a aplicação
