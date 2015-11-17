@@ -71,6 +71,7 @@ firewall:
         fr_z1m241oll0ct:
             port:
                 - '3306'
+                - '777'
             priority: '100'
             proto: tcp
             action: accept

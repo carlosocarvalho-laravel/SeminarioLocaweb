@@ -1,7 +1,8 @@
 <?php
 namespace App\Bob\Slides;
 
-use Slides\Messages\Message;
+use App\Bob\Slides\Messages\Message;
+use Ratchet\ConnectionInterface;
 
 /**
  * Enviador de mensagens

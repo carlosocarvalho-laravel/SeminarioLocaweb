@@ -20,18 +20,19 @@ Modules.sound = {
 	},
 
 	checkCurrentSlide: function(currentSlide) {
+		var instance;
 		if ($(currentSlide).hasClass('sound-comecar')) {
-			var instance = createjs.Sound.play('comecar');
+			instance = createjs.Sound.play('comecar');
 	    	instance.volume = 0.5;
 		}  else if ($(currentSlide).hasClass('sound-qualresposta')) {
-			var instance = createjs.Sound.play('qualresposta');
+			instance = createjs.Sound.play('qualresposta');
 	    	instance.volume = 0.5;
 		}  else if ($(currentSlide).hasClass('sound-suspense02')) {
-			var instance = createjs.Sound.play('suspense02');
+			instance = createjs.Sound.play('suspense02');
 	    	instance.volume = 0.5;
 		}  else if ($(currentSlide).hasClass('sound-tchau')) {
-			var instance = createjs.Sound.play('tchau');
+			instance = createjs.Sound.play('tchau');
 	    	instance.volume = 0.5;
 		}
 	}
-}
+};
