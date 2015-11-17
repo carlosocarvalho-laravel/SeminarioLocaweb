@@ -14,6 +14,9 @@ composer install
 
 ## Rodando a Aplicação
 
+Certifique-se de ter instalado Vagrant, Virtualbox e o plugin `vagrant-hostmanager`. Os plugins `vagrant-cachier` e 
+`vagrant-bindfs` são opcionais.
+
 Esse repositório possui receitas de provisionamento com Vagrant criadas usando PuPHPet, portanto para rodar a aplicação
 basta executar o comando `vagrant up` na raiz do projeto, isso irá baixar uma imagem ubuntu 14.04, instalar e configurar
 tudo que é necessário para rodar a aplicação. Porem esse processo pode levar um tempo.
@@ -43,18 +46,22 @@ PuPHPet localizado em `puphpet/config.yaml`
 
 Existem duas forma de acessar os slides, como expectador ou como apresentador, somente como apresentador você terá
 acesso aos controles dos slides, os expectadores apenas poderão vizualizar os slides que estiverem sendo contralados
-pelo apresentador
+pelo apresentador.
+
+Se não tiver executado com Vagrant substitua o endereço pelo endereço configurado no seu ambiente ou por 
+http://localhost:8000 caso esteja executando com o servidor de desenvolvimento tanto ao acessar como apresentador
+quanto como expectador
 
 ### Acesso com Apresentador
 
-http://localhost:8000/presenter
+http://seminario.dev/presenter
 
 Usuário: admin
 Senha: phprules
 
 ### Acesso como Expectador
 
-http://localhost:8000
+http://seminario.dev
 
 ## Slides de Exemplos
 
@@ -67,6 +74,8 @@ apresentação.
 Esse é um trabalho em andamento, envie Pull Requests com seus Slides para esse repositório mas esteja ciente de que
 outros palestrantes e organizadores do evento tambem estarão realizando mudanças no projeto ao mesmo tempo, por isso
 procure não interferir nas demais alterações.
+
+Caso tenha algum problema com a aplicação abra uma issue nesse mesmo respositório
 
 ### License
 
