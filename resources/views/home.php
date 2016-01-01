@@ -91,16 +91,36 @@
                     </div>
                 </section>
 
-                <section class="sound-suspense02" data-number="1">
+                <section class="sound-suspense02">
                     <p>Som</p>
                     <p>Para adcionar sons, você deve alterar o arquivo "public/js/modules/sound.js" e incluir uma classe sound-* na section</p>
                     <p>Use esse slide como exemplo</p>
                 </section>
 
-                <section class="sound-suspense02" data-number="1">
+                <section class="sound-suspense02">
                     <p>Mantenha Esses Slides</p>
                     <p>Insira seus slides após esse slide e mantenha os slides de exemplo para que outros palestrantes possam ver também</p>
                     <p>Envie-nos um Pull Request até 10/01/2016</p>
+                </section>
+
+                <section class="poll" data-number="pannel" data-change="true"">
+                    <p>Decida Sobre o Painel</p>
+                    <div class="button-level" data-value="keep">
+                        <span>Mantenha o Tema (<b>0</b>)</span>
+                        <div class="level green"></div>
+                    </div>
+
+                    <div class="button-level" data-value="change">
+                        <span>Troque de Tema (<b>0</b>)</span>
+                        <div class="level red"></div>
+                    </div>
+
+                    <?php if ($mode == 'presenter') : ?>
+                        <div class="button-level" data-value="clean">
+                            <span>limpar Dados (<b>0</b>)</span>
+                            <div class="level red"></div>
+                        </div>
+                    <?php endif; ?>
                 </section>
 
 			</div>

@@ -117,7 +117,7 @@ class Controller implements MessageComponentInterface
             }
 
             $poll = self::$polls[$message->number];
-            $poll->addVote($message->value);
+            $poll->addVote($cache['nickname'], $message->value);
 
             $message = new PollResultMessage($poll);
         }

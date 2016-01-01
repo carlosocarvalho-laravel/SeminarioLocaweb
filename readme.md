@@ -22,10 +22,10 @@ basta executar o comando `vagrant up` na raiz do projeto, isso irá baixar uma i
 tudo que é necessário para rodar a aplicação. Porem esse processo pode levar um tempo.
 
 Após concluído o processo de provisionamento acesse a maquina virtual via ssh uutilizando o comando `vagrant ssh` e
-inicie o servidor de slides com o comando
+inicie o servidor de slides com o seguinte comando no diretório `/vagrant`:
 
 ```bash
-php artisan slides:server
+sudo php artisan slides:server
 ```
 
 ### Rodando Localmente sem Vagrant
@@ -35,7 +35,7 @@ host para apontar para o diretório `public` desse repositório, ou executar o c
 servidor de desenvolvimento local.
 
 ```bash
-php artisan serve
+sudo php artisan serve
 ```
 
 Algumas extensões do PHP e outras dependencias devem estar habilitadas ou instaladas no seu sistema para que a aplicação

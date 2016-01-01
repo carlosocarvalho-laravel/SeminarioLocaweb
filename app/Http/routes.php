@@ -82,7 +82,7 @@ $app->get('/presenter', function() use ($app) {
             return redirect('/');
         } else {
             header('HTTP/1.0 401 Unauthorized');
-            echo 'Aqui não tem biscoito!';
+            echo 'Usuário ou Senha Invalidos!';
             exit;
         }
     }
