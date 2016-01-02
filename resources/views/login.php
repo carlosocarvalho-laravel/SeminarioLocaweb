@@ -49,6 +49,8 @@
 
                         <label for="pass">Senha (Preencha apenas se for palestrante)</label>
                         <input type="password" name="pass" id="pass">
+
+                        <button type="submit">Enviar</button>
                     </form>
                 </section>
 

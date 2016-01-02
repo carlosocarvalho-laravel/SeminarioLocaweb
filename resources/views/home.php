@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>React e Ratchet, async e websockets com PHP</title>
+		<title>5 Seminario Locaweb PHPSP</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Slied 5 Seminario Locaweb PHPSP">
+		<meta name="author" content="PHPSP">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -50,7 +50,7 @@
                     <h4>Instruções para Palestrantes!</h4>
                 </section>
 
-				<section class="sound-comecar">
+				<section>
 					<h1>Bem vindo ao guia de Palestrantes para o Seminário Locaweb PHPSP</h1>
 				</section>
 
@@ -129,7 +129,7 @@
 
                     <?php if ($mode == 'presenter') : ?>
                         <div class="button-level" data-value="raffle">
-                            <span>Sortear (<b>0</b>)</span>
+                            <span>Sortear</span>
                             <div class="level green"></div>
                         </div>
                     <?php endif; ?>

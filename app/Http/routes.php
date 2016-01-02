@@ -14,8 +14,13 @@
 use Illuminate\Http\Request;
 
 $app->get('/', function() use ($app) {
+    if (! Session::has('nickname')) {
+        return view('login');
+    }
+
     //Caso seja rodado no localhost:8000, por exemplo
     //retira os : do nome do servidor
+    $md5 = md5(Session::getId());
     $mode = Session::get('mode');
     $host = $_SERVER['HTTP_HOST'];
     $hostExplode = explode(':', $host);
@@ -26,10 +31,6 @@ $app->get('/', function() use ($app) {
         'mode' => $mode,
         'websocketsAddress' => $host . ':777?session=' . $md5
     ];
-
-    if (! Session::has('nickname')) {
-        return view('login', $data);
-    }
 
     return view('home', $data);
 });
@@ -53,7 +54,7 @@ $app->post('/', function(Request $request) use ($app) {
     } else {
         $md5 = md5(Session::getId());
 
-        Session::put('mode', 'presenter');
+        Session::put('mode', 'participant');
         Session::put('nickname', $request->input('mail'));
 
         if (\Cache::has($md5)) {
