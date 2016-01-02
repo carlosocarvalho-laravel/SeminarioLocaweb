@@ -53,7 +53,6 @@ class Poll
             $percentages[$key] = ceil(($quantity / $total) * 100);
         }
 
-//        Log::d('Poll Percentages: '.var_dump($percentages));
         return $percentages;
     }
 
@@ -73,8 +72,6 @@ class Poll
             $count[$value]++;
         }
 
-//        Log::d('Poll Votes: '.var_dump($this->votes));
-//        Log::d('Poll Count: '.var_dump($count));
         return $count;
     }
 }
