@@ -3,6 +3,8 @@ namespace App\Bob\Slides;
 
 use App\Bob\Slides\Messages\CounterMessage;
 use App\Bob\Slides\Messages\MessageManager;
+use App\Bob\Slides\Messages\RaffleMessage;
+use App\Bob\Slides\Messages\RaffleResultMessage;
 use App\Bob\Slides\Messages\SlideMessage;
 use App\Bob\Slides\Messages\PingMessage;
 use App\Bob\Slides\Messages\PollMessage;
@@ -120,6 +122,35 @@ class Controller implements MessageComponentInterface
             $poll->addVote($cache['nickname'], $message->value);
 
             $message = new PollResultMessage($poll);
+        } else if ($message instanceof RaffleMessage) {
+            //Se é uma mensagem de sorteio, inicia a enquete e computa o voto
+
+            $usersToSort = [];
+
+            foreach (self::$connections as $anotherConnection) {
+                if ($anotherConnection !== $connection) {
+                    $cache = \Cache::get($anotherConnection->session);
+
+                    if (!isset($usersToSort[$cache['nickname']])) {
+                        $usersToSort[$cache['nickname']] = $anotherConnection;
+                    }
+                }
+            }
+
+            $winnerPointer = array_rand($usersToSort);
+            $winnerCache = \Cache::get($usersToSort[$winnerPointer]->session);
+            Log::d('Winner: '.$winnerCache['nickname']);
+
+            $resultMessage = new RaffleResultMessage($winnerCache['nickname']);
+
+            foreach (self::$connections as $anotherConnection) {
+                if ($anotherConnection !== $usersToSort[$winnerPointer]) {
+                    Sender::send($message, $anotherConnection);
+                }
+            }
+
+            $resultMessage->winner = true;
+            Sender::send($message, $usersToSort[$winnerPointer]);
         }
 
         if ($message instanceof PollResultMessage) {
