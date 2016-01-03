@@ -31,6 +31,14 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
+        <style>
+            #loginForm{display: block; width: 100%; text-align: left; box-sizing: border-box; padding: 0 10%;}
+            #loginForm label{display: block; width: 100%;}
+            #loginForm input{display: block; width: 100%; margin-bottom: 2em;}
+            #loginForm button{display: block; float: right;}
+            #loginForm small{display: block; font-size: 0.4em}
+        </style>
+
 		<!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
 	</head>
 
@@ -43,11 +51,11 @@
 
                 <section>
                     <h2>Acesso aos Slides</h2>
-                    <form method="post">
+                    <form method="post" id="loginForm">
                         <label for="mail">Email</label>
                         <input type="text" name="mail" id="mail">
 
-                        <label for="pass">Senha (Preencha apenas se for palestrante)</label>
+                        <label for="pass">Senha <small>(Preencha apenas se for palestrante)</small></label>
                         <input type="password" name="pass" id="pass">
 
                         <button type="submit">Enviar</button>
