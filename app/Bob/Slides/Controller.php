@@ -145,12 +145,12 @@ class Controller implements MessageComponentInterface
 
             foreach (self::$connections as $anotherConnection) {
                 if ($anotherConnection !== $usersToSort[$winnerPointer]) {
-                    Sender::send($message, $anotherConnection);
+                    Sender::send($resultMessage, $anotherConnection);
                 }
             }
 
             $resultMessage->winner = true;
-            Sender::send($message, $usersToSort[$winnerPointer]);
+            Sender::send($resultMessage, $usersToSort[$winnerPointer]);
         }
 
         if ($message instanceof PollResultMessage) {
@@ -163,7 +163,7 @@ class Controller implements MessageComponentInterface
         } else if ( $message instanceof PingMessage) {
             Log::d('Send back');
             Sender::send($message, $connection);
-        } else {
+        } else if (!$message instanceof RaffleResultMessage) {
             Log::d('Broadcast to others');
             //Broadcast para todos, menos para quem enviou
             foreach (self::$connections as $anotherConnection) {

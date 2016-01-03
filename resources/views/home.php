@@ -124,7 +124,7 @@
                 </section>
 
                 <section class="raffle" data-number="pannel" data-change="true">
-                    <h1 class="winner-message"></h1>
+                    <h2 class="winner-message"></h2>
                     <p>Vencedor</p>
                     <p class="winner-nickname"></p>
 

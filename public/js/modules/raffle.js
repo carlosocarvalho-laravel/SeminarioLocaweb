@@ -19,6 +19,8 @@ Modules.poll = {
 
 	callback: function(data) {
 		if (data.type == 'raffle-result') {
+			$(".winner-message").html('');
+
 			if(data.winner == true){
 				$(".winner-message").html('Parabens Você é O Vencedor');
 			}
