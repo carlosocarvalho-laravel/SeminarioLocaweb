@@ -107,7 +107,7 @@ execute os seguintes passos para corrigir os problemas
 3. Crie um arquivo de configuração do memcached com `sudo touch /etc/php5/mods-available/memcached.ini`
 4. Acesse esse arquivo com o seu editor de texto favorito. ex: `sudo vim /etc/php5/mods-available/memcached.ini`
 5. Insira o seguinte conteúdo nesse arquivo `extension=memcached.so`. Salve e feche `:wq` se estiver no vim
-6. Execute o seguinte comando: `php5enmod memcached` para habilitar a extensão
+6. Execute o seguinte comando: `sudo php5enmod memcached` para habilitar a extensão
 7. Reestart os serviços com `sudo service php5-fpm restart && sudo service memcached restart && sudo service nginx restart`
 
 Caso o problema persista abra uma issue nesse repositório para que possamos ajuda-lo.
