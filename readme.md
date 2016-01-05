@@ -80,6 +80,24 @@ Caso tenha algum problema com a aplicação abra uma issue nesse mesmo resposit�
 
 ## Know Issues
 
+### Conexão SSH
+
+Se durante o provisionamento da maquina virtual você receber uma sequencia de erros com a seguinte mensagem:
+
+```
+Warning: Authentication failure. Retrying...
+```
+
+Acesso o diretório `puphpet/files/dot/ssh` e remova todos os arquivos de dentro desse diretório exceto o arquivo 
+`insecure_private_key`. Em seguida remova a maquina virtual e inicie o procedimento novamente com os seguintes comandos:
+
+```
+vagrant destroy
+vagrant up
+```
+
+### Problema de Memcached
+
 Identificamos um possível problema na instalação do memcached na maquina virtual, porem o problema parece não acontecer
 em 100% das vezes, caso receba um erro informando que a classe `memcached` não foi encontrada ao acessar os slides
 execute os seguintes passos para corrigir os problemas
