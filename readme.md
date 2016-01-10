@@ -14,6 +14,8 @@ composer install
 
 ## Rodando a Aplicação
 
+Você pode rodar a aplicação de 3 formas: 'AZK', 'Vagrant' ou 'Localmente'. Cada forma é explicada abaixo:
+
 ### AZK
 
 Instale o AZK (caso não tenha ainda instalado): http://docs.azk.io/en/installation/
