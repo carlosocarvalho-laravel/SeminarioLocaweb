@@ -6,7 +6,7 @@
 
 		<title>5 Seminario Locaweb PHPSP</title>
 
-		<meta name="description" content="Slied 5 Seminario Locaweb PHPSP">
+		<meta name="description" content="Slide 5 Seminario Locaweb PHPSP">
 		<meta name="author" content="PHPSP">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />

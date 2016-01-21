@@ -99,6 +99,11 @@
             };
 
 			Reveal.initialize(revealConfig);
+
+            // Fake ratchet
+            window.ratchet = {
+                on: function() {}
+            }
 		</script>
 
 	</body>

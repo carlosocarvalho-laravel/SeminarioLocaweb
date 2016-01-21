@@ -21,6 +21,11 @@ $app->get('/', function() use ($app) {
     //Caso seja rodado no localhost:8000, por exemplo
     //retira os : do nome do servidor
     $md5 = md5(Session::getId());
+
+    if (! \Cache::has($md5)) {
+        return view('login');
+    }
+
     $mode = Session::get('mode');
     $host = $_SERVER['HTTP_HOST'];
     $hostExplode = explode(':', $host);
@@ -44,8 +49,8 @@ $app->post('/', function(Request $request) use ($app) {
         Session::put('mode', 'presenter');
         Session::put('nickname', 'admin@admin.com.br');
 
-        if (\Cache::has($md5)) {
-            $cache = \Cache::get('$md5');
+        if (! \Cache::has($md5)) {
+            $cache = [];
             $cache['mode'] = 'presenter';
             $cache['nickname'] = 'admin@admin.com.br';
 
@@ -57,8 +62,8 @@ $app->post('/', function(Request $request) use ($app) {
         Session::put('mode', 'participant');
         Session::put('nickname', $request->input('mail'));
 
-        if (\Cache::has($md5)) {
-            $cache = \Cache::get('$md5');
+        if (! \Cache::has($md5)) {
+            $cache = [];
             $cache['mode'] = 'participant';
             $cache['nickname'] = $request->input('mail');
 
