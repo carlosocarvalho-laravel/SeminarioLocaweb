@@ -1725,6 +1725,92 @@ return false;
                 </section>
                 <!-- Slides JWT - Ivan Rosolen -->
 
+                <!-- PSR-7 e os Middlewares - Daniel Gimenes -->
+                <section>
+                    <h1>PSR-7 e os Middlewares</h1>
+                </section>
+
+                <section>
+                    <h2>PSR-7 e a <a>revolução</a> dos Middlewares</h2>
+                </section>
+
+                <section>
+                    <h2>Daniel Gimenes</h2>
+                    <ul>
+                        <li>Trabalha com PHP há aproximadamente 6 anos</li>
+                        <li>Engenheiro de Software na Maestrooo</li>
+                        <li>Graduando em Sistemas de Informação pela UNISAL</li>
+                        <li>ZF <3</li>
+                    </ul>
+                    <p><a href="http://twitter.com/danizord">@Danizord</a></p>
+                </section>
+
+                <section>
+                    <h1>O PHP e o Protocolo HTTP</h1>
+                </section>
+
+                <section>
+                    <p>Ok, então vamos escolher uma <a>abstração</a> do HTTP</p>
+                    <ul class="fragment">
+                        <li class="fragment">Aura\Http</li>
+                        <li class="fragment">Illuminate\Http</li>
+                        <li class="fragment">React\Http</li>
+                        <li class="fragment">Respect\Rest</li>
+                        <li class="fragment">Symfony\HttpFoundation</li>
+                        <li class="fragment">Zend\Http</li>
+                        <li class="fragment">...</li>
+                    </ul>
+                </section>
+
+                <section data-background="#ffffff">
+                    <p><img src="/images/danizord/zend-req-app-res.png"></p>
+                    <p style="color:black">
+                        <span class="fragment">Problem?</span>
+                        <span class="fragment"> Dependência</span>
+                    </p>
+                    <p style="color:red" class="fragment">Acoplamento :(</p>
+                </section>
+
+                <section data-background="/images/danizord/php-fig-bg.jpg">
+                    <h1>PHP-FIG</h1>
+                    <h2>The PHP Framework Interop Group</h2>
+                </section>
+
+                <section data-background="/images/danizord/php-fig-bg.jpg">
+                    <h1>PSR-7</h1>
+                    <ul>
+                        <li>Psr\Http\Message\RequestInterface</li>
+                        <li>Psr\Http\Message\ResponseInterface</li>
+                    </ul>
+                </section>
+
+                <section data-background="#ffffff">
+                    <p><img src="/images/danizord/psr-req-app-res.png"></p>
+                    <p style="color:black">
+                        <span class="fragment">Depende apenas da interface.</span>
+                        <span class="fragment">Pode variar a implementação.</span>
+                    </p>
+                    <p style="color:blue" class="fragment">Aí sim! :D</p>
+                </section>
+
+                <section>
+                    <img src="/images/danizord/composer.png">
+                </section>
+
+                <section class="poll" data-number="danizord-1">
+                    <p>Você usa ou já usou o Composer em seus projetos?</p>
+
+                    <div class="button-level" data-value="sim">
+                        <span>Sim (<b>0</b>)</span>
+                        <div class="level green"></div>
+                    </div>
+
+                    <div class="button-level" data-value="não">
+                        <span>Não (<b>0</b>)</span>
+                        <div class="level red"></div>
+                    </div>
+                </section>
+
                 <!-- Painel -->
                 <section class="poll" data-number="pannel" data-change="true">
                     <p>Decida Sobre o Painel</p>
