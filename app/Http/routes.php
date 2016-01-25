@@ -37,7 +37,7 @@ $app->get('/', function() use ($app) {
         'websocketsAddress' => $host . ':777?session=' . $md5
     ];
 
-    return view('homeDiegoPires', $data);
+    return view('home', $data);
 });
 
 $app->post('/', function(Request $request) use ($app) {
