@@ -1,6 +1,7 @@
 <?php
 namespace App\Bob\Slides;
 
+use App\Bob\Slides\Messages\ArduinoMessage;
 use App\Bob\Slides\Messages\CounterMessage;
 use App\Bob\Slides\Messages\MessageManager;
 use App\Bob\Slides\Messages\SlideMessage;
@@ -63,11 +64,13 @@ class Controller implements MessageComponentInterface
         }
 
         if (! array_key_exists('session', $queryParams)) {
+            echo 'Conexão fechada por não ter enviado o ID da sessão';
             $connection->close();
             return;
         }
 
         if (! \Cache::has($queryParams['session'])) {
+            echo 'Conexão fechada por não ter encontrado a sessão';
             $connection->close();
             return;
         }
@@ -132,6 +135,11 @@ class Controller implements MessageComponentInterface
         } else if ( $message instanceof PingMessage) {
             Log::d('Send back');
             Sender::send($message, $connection);
+        } else if ( $message instanceof ArduinoMessage) {
+            Log::d('Arduino Message');
+            foreach (self::$connections as $anotherConnection) {
+                Sender::send($message, $anotherConnection);
+            }
         } else {
             Log::d('Broadcast to others');
             //Broadcast para todos, menos para quem enviou

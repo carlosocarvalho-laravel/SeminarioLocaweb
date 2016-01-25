@@ -28,6 +28,8 @@ class MessageManager
             return new PingMessage($obj, $connection);
         } else if ($obj->type == 'chat') {
             return new ChatMessage($obj, $connection);
+        } else if ($obj->type == 'arduino') {
+            return new ArduinoMessage($obj, $connection);
         } else {
             return new Message($obj, $connection);
         }

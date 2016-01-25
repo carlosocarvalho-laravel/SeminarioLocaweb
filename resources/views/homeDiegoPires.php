@@ -15,7 +15,8 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/diego.css">
 		<link rel="stylesheet" href="css/theme/league.css" id="theme">
 
 		<!-- Code syntax highlighting -->
@@ -268,11 +269,228 @@
 
                     <section>
                         <h1>WebSocket</h1>
-                        <p>É através do React que iremos "comandar" o Arduino, enviando e recebendo informações.</p>
+                        <p>É através do Ratchet que iremos "comandar" o Arduino, enviando e recebendo informações.</p>
                         
 
                     </section>
 
+                    <section data-background="#ffffff">
+                        <img src="images/diagrama-server-client.png" />
+                    </section>
+
+                </section>
+
+                <section>
+                    <section class="">
+                        <h1>Preparando o servidor</h1>
+                        
+                            <pre><code class="hljs hljs javascript" data-trim>
+                            composer require cboden/ratchet
+                            </code></pre>
+                        
+                        <aside class="notes">
+                            
+                        </aside>
+                    </section>
+
+                    <section>
+                    <h3>Ajustando o composer.json</h3>
+                        <pre><code class="hljs hljs javascript" data-trim>
+{
+    "autoload": {
+        "psr-0": {
+            "ServerLocaweb": "src"
+        }
+    },
+    "require": {
+        "cboden/ratchet": "^0.3.4"
+    }
+}
+                        </code></pre>
+                        
+
+                    </section>
+                </section>
+
+                <section>
+                    <section class="">
+                        <h1>Programando o Servidor</h1>
+                        
+                        Primeiro vamos criar a classe que será responsável por gerenciar as conexões.<br />
+                        Então, de acordo com o composer.json devemos criar a estrutura de diretório.
+                        
+                        <aside class="notes">
+                            
+                        </aside>
+                    </section>
+
+                    <section>
+                        <pre><code class="hljs hljs javascript" data-trim>
+/
+/bin
+  |
+   -- Será explicado em breve
+/src
+    /ServerLocaweb
+/vendor
+  |
+   -- Criado automaticamente pelo composer
+                        </code></pre>    
+
+                    </section>
+
+                    <section class="">
+                        <h3>WebSocketServer.php</h3>
+                        Deve conter o "padrão" para WebSockets, iniciando da seguinte forma
+                        <pre>
+                            <code class="hlphp hlphp php" data-trim>
+&lt;?php
+namespace ServerLocaweb;
+use Ratchet\MessageComponentInterface;
+use Ratchet\ConnectionInterface;
+
+class WebSocketServer implements MessageComponentInterface {
+                            </code>
+                        </pre>
+                    </section>
+
+
+                    <section>
+                        <pre>
+                            <code class="hlphp hlphp php" data-trim>
+protected $clients;
+
+public function __construct() {
+    $this->clients = new \SplObjectStorage;
+    echo "Servidor Webocket no ar". PHP_EOL;
+}
+
+public function onOpen(ConnectionInterface $conn) 
+{
+    $this->clients->attach($conn);
+
+    echo "Conexão estabelecida\n";
+}
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code class="hlphp hlphp php" data-trim>
+
+public function onClose(ConnectionInterface $conn) 
+{
+    $this->clients->detach($conn);
+
+    echo "Conexão {$conn->resourceId} foi desconectada".PHP_EOL;
+}
+
+public function onError(ConnectionInterface $conn, \Exception $e) 
+{
+    echo "Ocorreu um erro: {$e->getMessage()}".PHP_EOL;
+
+    $conn->close();
+}
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code class="hlphp hlphp php" data-trim>
+public function onMessage(ConnectionInterface $from, $msg) 
+{
+    $totalConexoes = count($this->clients) - 1;
+    echo sprintf('Conexão %d enviando mensagem "%s" para %d conex%s' . PHP_EOL
+        , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? 'ão' : 'ões');
+
+    foreach ($this->clients as $client) {
+        if ($from !== $client) {
+            $client->send($msg);
+        }
+    }
+}
+                            </code>
+                        </pre>
+                    </section>
+                    
+
+                </section>
+
+                <section>
+                    <section class="">
+                        <h1>Programando o client HTML</h1>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code class="hlhtml hlhtml html" data-trim>
+&lt;script src="js/jquery.min.js">&lt;/script>                                
+                            </code>
+                        </pre>
+
+                        <pre>
+                            <code class="hlhtml hlhtml html" data-trim>
+&lt;h2>Cor Atual &lt;span id="corAtual">&lt;/span>&lt;/h2>
+&lt;button class="button-arduino" data-value="amarelo">Amarelo&lt;/button>
+&lt;button class="button-arduino" data-value="verde">Verde&lt;/button>
+&lt;button class="button-arduino" data-value="azul">Azul&lt;/button>
+&lt;button class="button-arduino" data-value="vermelho">Vermelho&lt;/button>                              
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code class="hljs hljs js" data-trim>
+var conn = new WebSocket('ws://localhost:8081');
+conn.onopen = function(e) {
+    console.log("Websocket Server Arduino OK!");
+};
+
+conn.onmessage = function(e) {
+
+    data = JSON.parse(e.data);
+    if (data.type == 'arduino') {
+        $("#corAtual").html(data.command);
+
+    }
+};
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs hljs js" data-trim>
+$(".button-arduino").on('tap click', function(e) {
+    e.preventDefault();
+    $("#corAtual").html($(this).attr('data-value'));
+    objEnviar = {};
+    objEnviar.command = $(this).attr('data-value');
+    objEnviar.type = 'arduino';
+    conn.send(JSON.stringify(objEnviar));
+});
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+
+
+
+                <section>
+                    <section class="">
+                        <h1>Programando o Arduino</h1>
+
+                    </section>
+                </section>
+                <section>
+                    <h2>Cor Atual <span id="corAtual"></span></h2>
+                    <button class="button-arduino amarelo" data-value="amarelo">Amarelo</button>
+                    <button class="button-arduino verde" data-value="verde">Verde</button>
+                    <button class="button-arduino azul" data-value="azul">Azul</button>
+                    <button class="button-arduino vermelho" data-value="vermelho">Vermelho</button>
+                    
                 </section>
 			</div>
 
@@ -332,6 +550,8 @@
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize(revealConfig);
+
+            
 		</script>
 
 	</body>

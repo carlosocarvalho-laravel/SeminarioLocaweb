@@ -50,7 +50,7 @@ $app->get('/', function() use ($app) {
         'websocketsAddress' => $host . ':777?session=' . $md5
     ];
 
-    return view('home', $data);
+    return view('homeDiegoPires', $data);
 });
 
 $app->get('/presenter', function() use ($app) {
