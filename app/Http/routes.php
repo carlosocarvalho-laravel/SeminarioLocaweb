@@ -34,7 +34,7 @@ $app->get('/', function() use ($app) {
     $data = [
         'host' => $_SERVER['HTTP_HOST'],
         'mode' => $mode,
-        'websocketsAddress' => $host . ':8080?session=' . $md5
+        'websocketsAddress' => $host . ':443?session=' . $md5
     ];
 
     return view('home', $data);
