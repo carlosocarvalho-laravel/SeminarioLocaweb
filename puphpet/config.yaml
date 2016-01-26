@@ -70,7 +70,7 @@ firewall:
         fr_1rmx2iytkhay:
             port:
                 - '3306'
-                - '443'
+                - '777'
             priority: '100'
             proto: tcp
             action: accept

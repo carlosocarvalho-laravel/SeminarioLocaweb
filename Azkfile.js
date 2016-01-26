@@ -51,7 +51,7 @@ systems({
 		},
 		scalable: {default: 1},
 		ports: {
-			websocket: '443:443/tcp',
+			websocket: '777:777/tcp',
 		}
 	}
 });
