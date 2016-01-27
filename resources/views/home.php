@@ -1762,13 +1762,21 @@ return false;
                     </ul>
                 </section>
 
-                <section data-background="#ffffff">
+                <section data-background="#ffffff" data-transition="slide-in fade-out">
                     <p><img src="/images/danizord/zend-req-app-res.png"></p>
                     <p style="color:black">
                         <span class="fragment">Problem?</span>
                         <span class="fragment"> Dependência</span>
                     </p>
                     <p style="color:red" class="fragment">Acoplamento :(</p>
+                </section>
+
+                <section data-background="#ffffff" data-transition="fade-in slide-out">
+                    <p><img src="/images/danizord/zend-req-guard-app-res.png"></p>
+                    <p style="color:black">
+                        <span class="fragment">Interoperabilidade?</span>
+                    </p>
+                    <p style="color:red" class="fragment">Not today :(</p>
                 </section>
 
                 <section data-background="/images/danizord/php-fig-bg.jpg">
@@ -1778,37 +1786,39 @@ return false;
 
                 <section data-background="/images/danizord/php-fig-bg.jpg">
                     <h1>PSR-7</h1>
-                    <ul>
-                        <li>Psr\Http\Message\RequestInterface</li>
-                        <li>Psr\Http\Message\ResponseInterface</li>
-                    </ul>
                 </section>
 
                 <section data-background="#ffffff">
                     <p><img src="/images/danizord/psr-req-app-res.png"></p>
                     <p style="color:black">
-                        <span class="fragment">Depende apenas da interface.</span>
-                        <span class="fragment">Pode variar a implementação.</span>
+                        <span class="fragment">Depende da abstração.</span>
+                        <span class="fragment">Permite variar a implementação.</span>
                     </p>
                     <p style="color:blue" class="fragment">Aí sim! :D</p>
                 </section>
 
-                <section>
-                    <img src="/images/danizord/composer.png">
+                <section data-background="#ffffff">
+                    <p><img src="/images/danizord/psr-req-guard-app-res.png"></p>
+                    <p style="color:black" class="fragment">Depende da abstração.</p>
+                    <p style="color:black" class="fragment">Funciona com qualquer implementação.</p>
+                    <p style="color:blue" class="fragment">Funciona em qualquer framework.</p>
                 </section>
 
-                <section class="poll" data-number="danizord-1">
-                    <p>Você usa ou já usou o Composer em seus projetos?</p>
+                <section data-background="/images/danizord/whoa.gif">
+                </section>
 
-                    <div class="button-level" data-value="sim">
-                        <span>Sim (<b>0</b>)</span>
-                        <div class="level green"></div>
-                    </div>
+                <section>
+                    <h2>Até ontem:</h2>
+                    <ul>
+                        <li class="fragment">Laravel package: Entrust</li>
+                        <li class="fragment">Symfony bundle: SecurityBundle</li>
+                        <li class="fragment">Zend Framework module: ZfcRbac</li>
+                    </ul>
+                </section>
 
-                    <div class="button-level" data-value="não">
-                        <span>Não (<b>0</b>)</span>
-                        <div class="level red"></div>
-                    </div>
+                <section>
+                    <h2>De hoje em diante:</h2>
+                    <h1 class="fragment">Middlewares</h1>
                 </section>
 
                 <!-- Painel -->
