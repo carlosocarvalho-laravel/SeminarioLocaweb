@@ -30,28 +30,28 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 
-      function toggleFullScreen() {
-        var noSleep = new NoSleep();
-        noSleep.enable();
-        if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-         (!document.mozFullScrgit pull https://github.com/nawarian/SeminarioLocaweb.git mastereen && !document.webkitIsFullScreen)) {
-          if (document.documentElement.requestFullScreen) {
-            document.documentElement.requestFullScreen();
-          } else if (document.documentElement.mozRequestFullScreen) {
-            document.documentElement.mozRequestFullScreen();
-          } else if (document.documentElement.webkitRequestFullScreen) {
-            document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-          }
-        } else {
-          if (document.cancelFullScreen) {
-            document.cancelFullScreen();
-          } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-          } else if (document.webkitCancelFullScreen) {
-            document.webkitCancelFullScreen();
-          }
-        }
-      }
+            function toggleFullScreen() {
+              var noSleep = new NoSleep();
+              noSleep.enable();
+              if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+               (!document.mozFullScrgit pull https://github.com/nawarian/SeminarioLocaweb.git mastereen && !document.webkitIsFullScreen)) {
+                if (document.documentElement.requestFullScreen) {
+                  document.documentElement.requestFullScreen();
+                } else if (document.documentElement.mozRequestFullScreen) {
+                  document.documentElement.mozRequestFullScreen();
+                } else if (document.documentElement.webkitRequestFullScreen) {
+                  document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+                }
+              } else {
+                if (document.cancelFullScreen) {
+                  document.cancelFullScreen();
+                } else if (document.mozCancelFullScreen) {
+                  document.mozCancelFullScreen();
+                } else if (document.webkitCancelFullScreen) {
+                  document.webkitCancelFullScreen();
+                }
+              }
+            }
 		</script>
 
 		<!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
@@ -832,41 +832,6 @@
           </h2>
         </section>
 
-                <!-- Painel -->
-                <section class="poll" data-number="pannel" data-change="true">
-                    <p>Decida Sobre o Painel</p>
-                    <div class="button-level" data-value="keep">
-                        <span>Mantenha o Tema (<b>0</b>)</span>
-                        <div class="level green"></div>
-                    </div>
-
-                    <div class="button-level" data-value="change">
-                        <span>Troque de Tema (<b>0</b>)</span>
-                        <div class="level red"></div>
-                    </div>
-
-                    <?php if ($mode == 'presenter') : ?>
-                        <div class="button-level" data-value="clean">
-                            <span>limpar Dados (<b>0</b>)</span>
-                            <div class="level red"></div>
-                        </div>
-                    <?php endif; ?>
-                </section>
-
-                <!-- Sorteio -->
-                <section class="raffle" data-number="pannel" data-change="true">
-                    <h2 class="winner-message"></h2>
-                    <p>Vencedor</p>
-                    <p class="winner-nickname"></p>
-
-                    <?php if ($mode == 'presenter') : ?>
-                        <div class="button-level" data-value="raffle">
-                            <span>Sortear</span>
-                            <div class="level green"></div>
-                        </div>
-                    <?php endif; ?>
-                </section>
-
                 <!-- Slides JWT - Ivan Rosolen -->
                 <section>
                     <h1>JSON WEB TOKEN</h1>
@@ -1005,10 +970,10 @@
                     <h1>Header</h1>
                     <pre>
                         <code class="json" data-trim>
-{
-    "typ": "JWT",
-    "alg": "HS256"
-}
+                            {
+                            "typ": "JWT",
+                            "alg": "HS256"
+                            }
                         </code>
                     </pre>
                 </section>
@@ -1025,9 +990,9 @@
                         <li>jti: Unique identifier for the JWT</li>
                     </ul>
                     <p><small>Ref.:
-                        <a href="http://www.slideshare.net/lcobucci/jwt-to-authentication-and-beyond" target="_blank">
-                            http://www.slideshare.net/lcobucci/jwt-to-authentication-and-beyond
-                        </a></small>
+                            <a href="http://www.slideshare.net/lcobucci/jwt-to-authentication-and-beyond" target="_blank">
+                                http://www.slideshare.net/lcobucci/jwt-to-authentication-and-beyond
+                            </a></small>
                     </p>
                 </section>
 
@@ -1035,22 +1000,22 @@
                     <h2>Payload / Claims</h2>
                     <pre>
                         <code class="json" data-trim>
-{
-    "iss": "ivanrosolen.com",
-    "exp": 1300819380,
-    "name": "Ivan Rosolen",
-    "admin": true
-}
+                            {
+                            "iss": "ivanrosolen.com",
+                            "exp": 1300819380,
+                            "name": "Ivan Rosolen",
+                            "admin": true
+                            }
                         </code>
                     </pre>
                 </section>
 
                 <section>
                     <h1>JWT</h4>
-                    <h4>eyJ0eXAiOiAiSldUIiwiYWxnIjogIkhTMjU2In0=</h4>
-                    <h4>.</h4>
-                    <h4>eyJpc3MiOiAiaXZhbnJvc29sZW4uY29tIiwiZXhwIjogMTMwMDgxOTM4MCwibmFtZSI6ICJJdmFuIFJvc29sZW4iLCJhZG1pbiI6IHRydWV9</h4>
-                    <h4>.</h4>
+                        <h4>eyJ0eXAiOiAiSldUIiwiYWxnIjogIkhTMjU2In0=</h4>
+                        <h4>.</h4>
+                        <h4>eyJpc3MiOiAiaXZhbnJvc29sZW4uY29tIiwiZXhwIjogMTMwMDgxOTM4MCwibmFtZSI6ICJJdmFuIFJvc29sZW4iLCJhZG1pbiI6IHRydWV9</h4>
+                        <h4>.</h4>
                 </section>
 
                 <section>
@@ -1075,20 +1040,20 @@
                     <h1>Signature</h1>
                     <pre>
                         <code class="javascript" data-trim>
-var encodedString = base64UrlEncode(header) + "." + base64UrlEncode(payload);
+                            var encodedString = base64UrlEncode(header) + "." + base64UrlEncode(payload);
 
-HMACSHA256(encodedString, 'Xuplau');
+                            HMACSHA256(encodedString, 'Xuplau');
                         </code>
                     </pre>
                 </section>
 
                 <section>
                     <h1>JWT</h4>
-                    <h4>eyJ0eXAiOiAiSldUIiwiYWxnIjogIkhTMjU2In0=</h4>
-                    <h4>.</h4>
-                    <h4>eyJpc3MiOiAiaXZhbnJvc29sZW4uY29tIiwiZXhwIjogMTMwMDgxOTM4MCwibmFtZSI6ICJJdmFuIFJvc29sZW4iLCJhZG1pbiI6IHRydWV9</h4>
-                    <h4>.</h4>
-                    <h4>M2FjZTM0M2ZiNjhhMzBiOWNiYTkxN2U1Zjk4YjUxOWYzMTY3NGZlMmU4MTIzYjU1NTRkMjNlNjYzOTkyZGU2Nw==</h4>
+                        <h4>eyJ0eXAiOiAiSldUIiwiYWxnIjogIkhTMjU2In0=</h4>
+                        <h4>.</h4>
+                        <h4>eyJpc3MiOiAiaXZhbnJvc29sZW4uY29tIiwiZXhwIjogMTMwMDgxOTM4MCwibmFtZSI6ICJJdmFuIFJvc29sZW4iLCJhZG1pbiI6IHRydWV9</h4>
+                        <h4>.</h4>
+                        <h4>M2FjZTM0M2ZiNjhhMzBiOWNiYTkxN2U1Zjk4YjUxOWYzMTY3NGZlMmU4MTIzYjU1NTRkMjNlNjYzOTkyZGU2Nw==</h4>
                 </section>
 
                 <section>
@@ -1108,8 +1073,8 @@ HMACSHA256(encodedString, 'Xuplau');
                     <h1>New Token</h1>
                     <pre>
                         <code class="php" data-trim>
-use Lcobucci\JWT\Builder;
-use Lcobucci\JWT\Signer\Hmac\Sha256;
+                            use Lcobucci\JWT\Builder;
+                            use Lcobucci\JWT\Signer\Hmac\Sha256;
                         </code>
                     </pre>
                 </section>
@@ -1117,23 +1082,23 @@ use Lcobucci\JWT\Signer\Hmac\Sha256;
                 <section>
                     <pre>
                         <code class="php" data-trim>
-$signer  = new Sha256;
-$builder = new Builder;
+                            $signer  = new Sha256;
+                            $builder = new Builder;
 
-$token   = $builder->setIssuer($config['jwt']['issuer'])
-                   ->setAudience($config['jwt']['audience'])
-                   ->setId(hash('sha256',$config['jwt']['key'].$login->hash), true)
-                   ->setIssuedAt(time())
-                   ->setNotBefore(time() - 1)
-                   ->setExpiration(time() + 3600)
-                   ->set('uid', $login->hash)
-                   ->sign($signer, $config['jwt']['key'])
-                   ->getToken();
+                            $token   = $builder->setIssuer($config['jwt']['issuer'])
+                            ->setAudience($config['jwt']['audience'])
+                            ->setId(hash('sha256',$config['jwt']['key'].$login->hash), true)
+                            ->setIssuedAt(time())
+                            ->setNotBefore(time() - 1)
+                            ->setExpiration(time() + 3600)
+                            ->set('uid', $login->hash)
+                            ->sign($signer, $config['jwt']['key'])
+                            ->getToken();
 
-$tmp          = new stdClass;
-$tmp->name    = $login->name;
-$tmp->hash    = $login->hash;
-$tmp->token   = (string) $token;
+                            $tmp          = new stdClass;
+                            $tmp->name    = $login->name;
+                            $tmp->hash    = $login->hash;
+                            $tmp->token   = (string) $token;
                         </code>
                     </pre>
                 </section>
@@ -1142,9 +1107,9 @@ $tmp->token   = (string) $token;
                     <h1>Validate/Verify</h1>
                     <pre>
                         <code class="php" data-trim>
-use Lcobucci\JWT\ValidationData;
-use Lcobucci\JWT\Parser;
-use Lcobucci\JWT\Signer\Hmac\Sha256;
+                            use Lcobucci\JWT\ValidationData;
+                            use Lcobucci\JWT\Parser;
+                            use Lcobucci\JWT\Signer\Hmac\Sha256;
                         </code>
                     </pre>
                 </section>
@@ -1152,23 +1117,23 @@ use Lcobucci\JWT\Signer\Hmac\Sha256;
                 <section>
                     <pre>
                         <code class="php" data-trim>
-$parser = new Parser;
-$token = $parser->parse($token);
+                            $parser = new Parser;
+                            $token = $parser->parse($token);
 
-$data = new ValidationData;
-$data->setIssuer($config['jwt']['issuer']);
-$data->setAudience($config['jwt']['audience']);
+                            $data = new ValidationData;
+                            $data->setIssuer($config['jwt']['issuer']);
+                            $data->setAudience($config['jwt']['audience']);
 
-// unique id - blacklist
-$data->setId( hash('sha256', $config['jwt']['key'].$login->hash), true) ;
+                            // unique id - blacklist
+                            $data->setId( hash('sha256', $config['jwt']['key'].$login->hash), true) ;
 
-$signer = new Sha256;
+                            $signer = new Sha256;
 
-if ( $token->validate($data) !== true ||
-     $token->verify($signer, $config['jwt']['key']) !== true )
-{
-    return false;
-}
+                            if ( $token->validate($data) !== true ||
+                            $token->verify($signer, $config['jwt']['key']) !== true )
+                            {
+                            return false;
+                            }
                         </code>
                     </pre>
                 </section>
@@ -1272,11 +1237,46 @@ if ( $token->validate($data) !== true ||
                     <h1>OBRIGADO!</h1>
                     <p>Visite
                         <a href="http://phpsp.org.br" target="_blank">
-                             phpsp.org.br
+                            phpsp.org.br
                         </a>
                     </p>
                 </section>
                 <!-- Slides JWT - Ivan Rosolen -->
+
+                <!-- Painel -->
+                <section class="poll" data-number="pannel" data-change="true">
+                    <p>Decida Sobre o Painel</p>
+                    <div class="button-level" data-value="keep">
+                        <span>Mantenha o Tema (<b>0</b>)</span>
+                        <div class="level green"></div>
+                    </div>
+
+                    <div class="button-level" data-value="change">
+                        <span>Troque de Tema (<b>0</b>)</span>
+                        <div class="level red"></div>
+                    </div>
+
+                    <?php if ($mode == 'presenter') : ?>
+                        <div class="button-level" data-value="clean">
+                            <span>limpar Dados (<b>0</b>)</span>
+                            <div class="level red"></div>
+                        </div>
+                    <?php endif; ?>
+                </section>
+
+                <!-- Sorteio -->
+                <section class="raffle" data-number="pannel" data-change="true">
+                    <h2 class="winner-message"></h2>
+                    <p>Vencedor</p>
+                    <p class="winner-nickname"></p>
+
+                    <?php if ($mode == 'presenter') : ?>
+                        <div class="button-level" data-value="raffle">
+                            <span>Sortear</span>
+                            <div class="level green"></div>
+                        </div>
+                    <?php endif; ?>
+                </section>
 
 			</div>
 
