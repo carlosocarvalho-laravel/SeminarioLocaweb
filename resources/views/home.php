@@ -134,9 +134,9 @@
                       React além dos WebSockets
                     </h2>
                     <pre><code class="php">
-      $seminarioLocaweb = new BigMuthaFuckinEvent(new \DateTime());
+$seminarioLocaweb = new BigMuthaFuckinEvent(new \DateTime());
 
-      $seminarioLocaweb->setMadnessMode(true);
+$seminarioLocaweb->setMadnessMode(true);
                       </code></pre>
 
                       <a href="https://joind.in/talk/23fb1">https://joind.in/talk/23fb1</a>
@@ -190,21 +190,22 @@
                     <p>
                       Vamos registrar um novo jogador!
                     </p>
-                    <pre><code class="php">      try {
-        $mapper = $this->getMapper();
+                    <pre><code class="php">
+try {
+    $mapper = $this->getMapper();
 
-        $player = new Model\Player();
-        $player->decorate($data); // dados do jogador
+    $player = new Model\Player();
+    $player->decorate($data); // dados do jogador
 
-        $mapper->player->persist($player); // Player + atributos
-        $this->createInventory($player); // Inventário 30x30 [slots]
-        $this->createSkillset($player); // Skills + Níveis
+    $mapper->player->persist($player); // Player + atributos
+    $this->createInventory($player); // Inventário 30x30 [slots]
+    $this->createSkillset($player); // Skills + Níveis
 
-        $mapper->flush();
-        return (new JsonResponse($player));
-      } catch (\Exception $e) {
-        return (new JsonResponse(new Error($e)));
-      }
+    $mapper->flush();
+    return (new JsonResponse($player));
+} catch (\Exception $e) {
+    return (new JsonResponse(new Error($e)));
+}
                       </code></pre>
                   </section>
                   <section data-background-size="20%" data-background="images/creating-player/sincrono/01.png"></section>
@@ -268,19 +269,19 @@
                       Uma cara diferente para fazer o mesmo
                     </h2>
                     <pre><code class="php">
-      createPlayerFromRequest(\stdClass $request) { /*...*/ }
-      createInventory(Model\Player $player) { /*...*/ }
-      createSkillset(Model\Player $player) { /*...*/ }
+createPlayerFromRequest(\stdClass $request) { /*...*/ }
+createInventory(Model\Player $player) { /*...*/ }
+createSkillset(Model\Player $player) { /*...*/ }
 
-      try {
-          $player = createPlayerFromRequest($data);
-          createInventory($player);
-          createSkillset($player);
+try {
+  $player = createPlayerFromRequest($data);
+  createInventory($player);
+  createSkillset($player);
 
-          return (new JsonResponse($player));
-      } catch (\Exception $e) {
-          return (new JsonResponse(new Error($e)));
-      }
+  return (new JsonResponse($player));
+} catch (\Exception $e) {
+  return (new JsonResponse(new Error($e)));
+}
                     </code></pre>
                   </section>
                   <section>
@@ -296,22 +297,24 @@
                     <h2>
                       Catastrófico e Pouco Responsivo...
                     </h2>
-                    <pre><code class="php">      try {
-          $player = createPlayerFromRequest($data);
-          createInventory($player); // 60 ms
-          createSkillset($player); // 120 ms
+                    <pre><code class="php">
+try {
+  $player = createPlayerFromRequest($data);
+  createInventory($player); // 60 ms
+  createSkillset($player); // 120 ms
 
-          // Tudo certo *-*
-          return (new JsonResponse($player)); // 180 ms
-      } catch (InventoryCreationException $e) {
-          // Deu erro no inventário
-      } catch (SkillsetCreationException $e) {
-          // Deu erro na criação das habilidades
-      } catch (PlayerCreationException $e) {
-          // Deu erro ao criar personagem :O
-      } catch (\Exception $e) {
-          // Aqui deu ruim mesmo!
-      }</code></pre>
+  // Tudo certo *-*
+  return (new JsonResponse($player)); // 180 ms
+} catch (InventoryCreationException $e) {
+  // Deu erro no inventário
+} catch (SkillsetCreationException $e) {
+  // Deu erro na criação das habilidades
+} catch (PlayerCreationException $e) {
+  // Deu erro ao criar personagem :O
+} catch (\Exception $e) {
+  // Aqui deu ruim mesmo!
+}
+                    </code></pre>
                   </section>
                   <section>
                     <p>
@@ -331,19 +334,19 @@
                       ...essas coisas acontecessem ao <strong>mesmo</strong> tempo
                     </p>
                     <pre><code class="php">
-      createPlayerAccount(\stdClass $request) {
-          // $player = createPlayerFromRequest($request); (...)
-          return all([
-            createInventory($player), // 60 ms
-            createSkillset($player) // 120 ms
-          ]);
-      }
+createPlayerAccount(\stdClass $request) {
+  // $player = createPlayerFromRequest($request); (...)
+  return all([
+    createInventory($player), // 60 ms
+    createSkillset($player) // 120 ms
+  ]);
+}
 
-      createPlayerAccount($data) // 120 ms
-        ->then(function (Model\Player $player) {}) // :D
-        ->otherwise(function (InventoryCreationException $e) {}) // :/
-        ->otherwise(function (SkillsetCreationException $e) {}) // :(
-        ->otherwise(function (\Exception $e) {}); // TToTT
+createPlayerAccount($data) // 120 ms
+    ->then(function (Model\Player $player) {}) // :D
+    ->otherwise(function (InventoryCreationException $e) {}) // :/
+    ->otherwise(function (SkillsetCreationException $e) {}) // :(
+    ->otherwise(function (\Exception $e) {}); // TToTT
 
                     </code></pre>
 
@@ -434,21 +437,21 @@
                       </small>
                     </h2>
                     <pre><code class="php">
-      $loop = React\EventLoop\Factory::create();
-      // Executa {$callback01} infinitamente a cada {$n} segundos
-      $eterno = $loop->addPeriodicTimer($n, $callback01);
+$loop = React\EventLoop\Factory::create();
+// Executa {$callback01} infinitamente a cada {$n} segundos
+$eterno = $loop->addPeriodicTimer($n, $callback01);
 
-      // Executa uma única vez, daqui a 5 segundos
-      $unico = $loop->addTimer(
-        5,
-        function () use ($loop, $eterno) {
-          if ($loop->isTimerActive($eterno)) {
-            // Pára de inserir {$eterno} na fila
-            $loop->canceltimer($eterno);
-          }
-        }
-      );
-      $loop->run();
+// Executa uma única vez, daqui a 5 segundos
+$unico = $loop->addTimer(
+    5,
+    function () use ($loop, $eterno) {
+      if ($loop->isTimerActive($eterno)) {
+        // Pára de inserir {$eterno} na fila
+        $loop->canceltimer($eterno);
+      }
+    }
+);
+$loop->run();
                     </code></pre>
                   </section>
                   <section>
@@ -460,16 +463,16 @@
                       </small>
                     </h2>
                     <pre><code class="php">
-      $loop = React\EventLoop\Factory::create();
+$loop = React\EventLoop\Factory::create();
 
-      $nextTickCallback = function () {/*...*/};
-      $futureTickCallback = function () {/*...*/};
+$nextTickCallback = function () {/*...*/};
+$futureTickCallback = function () {/*...*/};
 
-      // Estes callbacks serão jogados para uma fila de execução
-      $loop->nextTick($nextTickCallback);
-      $loop->futureTick($futureTickCallback);
+// Estes callbacks serão jogados para uma fila de execução
+$loop->nextTick($nextTickCallback);
+$loop->futureTick($futureTickCallback);
 
-      $loop->run();
+$loop->run();
                     </code></pre>
                   </section>
 
@@ -478,20 +481,20 @@
               Callbacks de Streams
             </h2>
             <pre><code class="php">
-      $loop = React\EventLoop\Factory::create();
+$loop = React\EventLoop\Factory::create();
 
-      $streamTal = getStream(); // resource
-      stream_set_blocking($streamTal, 0);
+$streamTal = getStream(); // resource
+stream_set_blocking($streamTal, 0);
 
-      $loop->addReadStream($streamTal, function ($streamTal, $loop) {
-          // O que fazer quando $streamTal está pronto para leitura
-      });
+$loop->addReadStream($streamTal, function ($streamTal, $loop) {
+  // O que fazer quando $streamTal está pronto para leitura
+});
 
-      $loop->addWriteStream($streamTal, function ($streamTal, $loop) {
-          // O que fazer quando $streamTal está pronto para gravação
-      });
+$loop->addWriteStream($streamTal, function ($streamTal, $loop) {
+  // O que fazer quando $streamTal está pronto para gravação
+});
 
-      $loop->run();
+$loop->run();
             </code></pre>
           </section>
           <section>
@@ -544,11 +547,11 @@
               de I/O, facilitando a escrita em <strong>resources</strong>.
             </p>
             <pre><code class="php">
-      // Exemplo de variável do tipo *resource*
-      $resource = fopen('arquivo.txt', 'w+');
+// Exemplo de variável do tipo *resource*
+$resource = fopen('arquivo.txt', 'w+');
 
-      $buffer = new React\Stream\Buffer($resource, $loop);
-      $buffer->write('Hello, buffer!');
+$buffer = new React\Stream\Buffer($resource, $loop);
+$buffer->write('Hello, buffer!');
             </code></pre>
             <p>
               A implementação da classe Buffer vai além da simples escrita:<br>
@@ -564,15 +567,15 @@
               e <strong>pipe()</strong>:
             </p>
             <pre><code class="php">
-      $phpsp = fopen('http://phpsp.org.br', 'r');
-      $saida = fopen('./saida.html', 'w+');
-      $callback = function ($data) {/*...*/};
+$phpsp = fopen('http://phpsp.org.br', 'r');
+$saida = fopen('./saida.html', 'w+');
+$callback = function ($data) {/*...*/};
 
-      $reader = new React\Stream\Stream($phpsp, $loop);
-      $writer = new React\Stream\Stream($saida, $loop);
-      $reader->on('data', $callback);
+$reader = new React\Stream\Stream($phpsp, $loop);
+$writer = new React\Stream\Stream($saida, $loop);
+$reader->on('data', $callback);
 
-      $reader->pipe($writer);
+$reader->pipe($writer);
             </code></pre>
           </section>
           <section>
@@ -585,14 +588,14 @@
               que façam leitura ou escrita.
             </p>
             <pre><code class="php">
-      // Um OtServer em PHP?? Quem sabe?! O.o
-      $sock = stream_socket_server('tcp://0.0.0.0:7171');
-      $server = new React\Stream\Stream($sock, $loop);
+// Um OtServer em PHP?? Quem sabe?! O.o
+$sock = stream_socket_server('tcp://0.0.0.0:7171');
+$server = new React\Stream\Stream($sock, $loop);
 
-      $server->on('data', function($data) use ($sock) {
-          // Um readable resource => new Stream($clientSock) *-*
-          $clientSock = stream_socket_accept($sock);
-      });
+$server->on('data', function($data) use ($sock) {
+  // Um readable resource => new Stream($clientSock) *-*
+  $clientSock = stream_socket_accept($sock);
+});
             </code></pre>
           </section>
         </section>
@@ -614,14 +617,14 @@
               Lembram deste trecho de código?
             </p>
             <pre><code class="php">
-      // Um OtServer em PHP?? Quem sabe?! O.o
-      $sock = stream_socket_server('tcp://0.0.0.0:7171');
-      $server = new React\Stream\Stream($sock, $loop);
+// Um OtServer em PHP?? Quem sabe?! O.o
+$sock = stream_socket_server('tcp://0.0.0.0:7171');
+$server = new React\Stream\Stream($sock, $loop);
 
-      $server->on('data', function($data) use ($sock) {
-          // Um readable resource => new Stream($clientSock) *-*
-          $clientSock = stream_socket_accept($sock);
-      });
+$server->on('data', function($data) use ($sock) {
+  // Um readable resource => new Stream($clientSock) *-*
+  $clientSock = stream_socket_accept($sock);
+});
             </code></pre>
             <p>
               Parece até simples se você não precisa identificar as conexões,
@@ -633,17 +636,17 @@
               React\Socket
             </h2>
             <pre><code class="php">
-      $stdOut = new React\Stream\Stream(STDOUT, $loop);
-      $server = new React\Socket\Server($loop);
+$stdOut = new React\Stream\Stream(STDOUT, $loop);
+$server = new React\Socket\Server($loop);
 
-      $server->on('connection', function ($conn) use ($stdOut) {
-          // Alguém se conectou!! *-*
-          $conn->write('Olá, intruso! >_<');
+$server->on('connection', function ($conn) use ($stdOut) {
+  // Alguém se conectou!! *-*
+  $conn->write('Olá, intruso! >_<');
 
-          $conn->pipe($stdOut);
-      });
+  $conn->pipe($stdOut);
+});
 
-      $server->listen(7171, '0.0.0.0');
+$server->listen(7171, '0.0.0.0');
             </code></pre>
           </section>
         </section>
@@ -732,19 +735,19 @@
               Esta ferramenta roda como linha de comando
             </small>
             <pre><code class="php">
-      // $ php log.php meuArquivo.log 'Texto para o log'
-      require_once dirname(__FILE__).'/vendor/autoload.php';
+// $ php log.php meuArquivo.log 'Texto para o log'
+require_once dirname(__FILE__).'/vendor/autoload.php';
 
-      use Monolog\Logger;
-      use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
-      $logFile = $loggerName = $argv[1]; // meuArquivo.log
-      $textToLog = $argv[2]; // Texto para o log
+$logFile = $loggerName = $argv[1]; // meuArquivo.log
+$textToLog = $argv[2]; // Texto para o log
 
-      $log = new Logger($loggerName);
-      $log->pushHandler(new StreamHandler($logFile), Logger::WARNING);
+$log = new Logger($loggerName);
+$log->pushHandler(new StreamHandler($logFile), Logger::WARNING);
 
-      $log->addInfo($textToLog);
+$log->addInfo($textToLog);
             </code></pre>
           </section>
           <section>
@@ -752,17 +755,17 @@
               Utilizando log.php
             </h2>
             <pre><code class="php">
-      use React\ChildProcess\Process;
+use React\ChildProcess\Process;
 
-      $loop = React\EventLoop\Factory::create();
-      $stdIn = new React\Stream\Stream(STDIN, $loop);
+$loop = React\EventLoop\Factory::create();
+$stdIn = new React\Stream\Stream(STDIN, $loop);
 
-      $stdIn->on('data', function($input) use ($loop) {
-          $comando = "php log.php input.log '{$input}'";
-          (new Process($comando))->start($loop);
-      });
+$stdIn->on('data', function($input) use ($loop) {
+  $comando = "php log.php input.log '{$input}'";
+  (new Process($comando))->start($loop);
+});
 
-      $loop->run();
+$loop->run();
             </code></pre>
           </section>
           <section data-background-size="42%" data-background="images/logging/01.png"></section>
@@ -803,21 +806,21 @@
           <section>
             <h2>Exemplo: runando no Tibia :)</h2>
             <pre><code class="php">
-      $dm = PHPBot\DesktopManager\Factory::create($loop);
-      $runa = $argv[1];
+$dm = PHPBot\DesktopManager\Factory::create($loop);
+$runa = $argv[1];
 
-      $runar = $dm->createCommandPipeline(
-          $dm->wait(.5),
-          $dm->keyboard()->sendKey(Keys::ENTER()),
-          $dm->wait(.5),
-          $dm->keyboard()->type($runa),
-          $dm->wait(.5),
-          $dm->keyboard()->sendKey(Keys::ENTER()),
-          $dm->wait(2)
-      );
+$runar = $dm->createCommandPipeline(
+  $dm->wait(.5),
+  $dm->keyboard()->sendKey(Keys::ENTER()),
+  $dm->wait(.5),
+  $dm->keyboard()->type($runa),
+  $dm->wait(.5),
+  $dm->keyboard()->sendKey(Keys::ENTER()),
+  $dm->wait(2)
+);
 
-      $runar->start()
-            ->then($onPipelineEndedCallback);
+$runar->start()
+    ->then($onPipelineEndedCallback);
             </code></pre>
           </section>
           <section>
@@ -970,10 +973,10 @@
                     <h1>Header</h1>
                     <pre>
                         <code class="json" data-trim>
-                            {
-                            "typ": "JWT",
-                            "alg": "HS256"
-                            }
+{
+"typ": "JWT",
+"alg": "HS256"
+}
                         </code>
                     </pre>
                 </section>
@@ -1000,12 +1003,12 @@
                     <h2>Payload / Claims</h2>
                     <pre>
                         <code class="json" data-trim>
-                            {
-                            "iss": "ivanrosolen.com",
-                            "exp": 1300819380,
-                            "name": "Ivan Rosolen",
-                            "admin": true
-                            }
+{
+"iss": "ivanrosolen.com",
+"exp": 1300819380,
+"name": "Ivan Rosolen",
+"admin": true
+}
                         </code>
                     </pre>
                 </section>
@@ -1040,9 +1043,9 @@
                     <h1>Signature</h1>
                     <pre>
                         <code class="javascript" data-trim>
-                            var encodedString = base64UrlEncode(header) + "." + base64UrlEncode(payload);
+var encodedString = base64UrlEncode(header) + "." + base64UrlEncode(payload);
 
-                            HMACSHA256(encodedString, 'Xuplau');
+HMACSHA256(encodedString, 'Xuplau');
                         </code>
                     </pre>
                 </section>
@@ -1073,8 +1076,8 @@
                     <h1>New Token</h1>
                     <pre>
                         <code class="php" data-trim>
-                            use Lcobucci\JWT\Builder;
-                            use Lcobucci\JWT\Signer\Hmac\Sha256;
+use Lcobucci\JWT\Builder;
+use Lcobucci\JWT\Signer\Hmac\Sha256;
                         </code>
                     </pre>
                 </section>
@@ -1082,23 +1085,23 @@
                 <section>
                     <pre>
                         <code class="php" data-trim>
-                            $signer  = new Sha256;
-                            $builder = new Builder;
+$signer  = new Sha256;
+$builder = new Builder;
 
-                            $token   = $builder->setIssuer($config['jwt']['issuer'])
-                            ->setAudience($config['jwt']['audience'])
-                            ->setId(hash('sha256',$config['jwt']['key'].$login->hash), true)
-                            ->setIssuedAt(time())
-                            ->setNotBefore(time() - 1)
-                            ->setExpiration(time() + 3600)
-                            ->set('uid', $login->hash)
-                            ->sign($signer, $config['jwt']['key'])
-                            ->getToken();
+$token   = $builder->setIssuer($config['jwt']['issuer'])
+->setAudience($config['jwt']['audience'])
+->setId(hash('sha256',$config['jwt']['key'].$login->hash), true)
+->setIssuedAt(time())
+->setNotBefore(time() - 1)
+->setExpiration(time() + 3600)
+->set('uid', $login->hash)
+->sign($signer, $config['jwt']['key'])
+->getToken();
 
-                            $tmp          = new stdClass;
-                            $tmp->name    = $login->name;
-                            $tmp->hash    = $login->hash;
-                            $tmp->token   = (string) $token;
+$tmp          = new stdClass;
+$tmp->name    = $login->name;
+$tmp->hash    = $login->hash;
+$tmp->token   = (string) $token;
                         </code>
                     </pre>
                 </section>
@@ -1107,9 +1110,9 @@
                     <h1>Validate/Verify</h1>
                     <pre>
                         <code class="php" data-trim>
-                            use Lcobucci\JWT\ValidationData;
-                            use Lcobucci\JWT\Parser;
-                            use Lcobucci\JWT\Signer\Hmac\Sha256;
+use Lcobucci\JWT\ValidationData;
+use Lcobucci\JWT\Parser;
+use Lcobucci\JWT\Signer\Hmac\Sha256;
                         </code>
                     </pre>
                 </section>
@@ -1117,23 +1120,23 @@
                 <section>
                     <pre>
                         <code class="php" data-trim>
-                            $parser = new Parser;
-                            $token = $parser->parse($token);
+$parser = new Parser;
+$token = $parser->parse($token);
 
-                            $data = new ValidationData;
-                            $data->setIssuer($config['jwt']['issuer']);
-                            $data->setAudience($config['jwt']['audience']);
+$data = new ValidationData;
+$data->setIssuer($config['jwt']['issuer']);
+$data->setAudience($config['jwt']['audience']);
 
-                            // unique id - blacklist
-                            $data->setId( hash('sha256', $config['jwt']['key'].$login->hash), true) ;
+// unique id - blacklist
+$data->setId( hash('sha256', $config['jwt']['key'].$login->hash), true) ;
 
-                            $signer = new Sha256;
+$signer = new Sha256;
 
-                            if ( $token->validate($data) !== true ||
-                            $token->verify($signer, $config['jwt']['key']) !== true )
-                            {
-                            return false;
-                            }
+if ( $token->validate($data) !== true ||
+$token->verify($signer, $config['jwt']['key']) !== true )
+{
+return false;
+}
                         </code>
                     </pre>
                 </section>
