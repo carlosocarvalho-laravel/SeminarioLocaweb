@@ -1,4 +1,4 @@
-Modules.poll = {
+Modules.raffle = {
 	start: function() {
 		//Listener dos botões
 		$('.raffle .button-level').on('tap click', function(event) {

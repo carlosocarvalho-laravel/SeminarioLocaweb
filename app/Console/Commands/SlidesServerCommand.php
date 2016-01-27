@@ -41,7 +41,7 @@ class SlidesServerCommand extends Command {
                     $controller
                 )
             ),
-            777
+            7888
         );
 
         $loop = $server->loop;
