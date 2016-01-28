@@ -54,6 +54,32 @@
             }
 		</script>
 
+        <style>
+            .medium-poll{
+                float: left;
+                width: 28%;
+                font-size: 0.5em;
+            }
+
+            .medium-poll:nth-child(3), .medium-poll:nth-child(6){
+                float: right;
+                margin-right: 0px;;
+            }
+
+            .medium-poll span{
+                padding: 40px 20px;
+                font-size: 60%;
+            }
+
+            .button-level.small-poll{
+                clear: both;
+            }
+
+            .button-level.small-poll span b{
+                display: none;
+            }
+        </style>
+
 		<!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
 	</head>
 
@@ -67,67 +93,16 @@
 			<div class="slides">
 
                 <section>
-                    <h2>http://<?php echo $host; ?></h2>
-                    <h1>Palestra interativa!</h1>
+                    <h2>5 Seminario Locaweb PHPSP!</h2>
                     <h3>Smartphone / Tablet / Notebook</h3>
                     <p><img src="images/navegadores.png" /></p>
-                    <h4>Instruções para Palestrantes!</h4>
+                    <p><a href="http://seminariophpsp.jelasticlw.com.br/">http://seminariophpsp.jelasticlw.com.br/</a></p>
+                    <h4><a href="https://github.com/PHPSP/docs/blob/master/codigo-de-conduta.md">Código de Conduta</a></h4>
                 </section>
 
-				<section>
-					<h1>Bem vindo ao guia de Palestrantes para o Seminário Locaweb PHPSP</h1>
-				</section>
 
-				<section>
-					<h2>Instruções Iniciais!</h2>
-                    <p>Estamos usando Reveal.js para criar os slides, você pode acessar a documentação oficial do projeto <a href="https://github.com/hakimel/reveal.js">aqui</a></p>
-                    <p>Mas é muito simples criar seus slides, basta usar marcação HTML simples. Nos deixamos algumas coisas prontas para você também.</p>
-                    <p>O arquivo de slides está armazenadoe em "resources/views/home.php" dentro desse projeto, é nesse arquivo que você deve incluir os seus slides</p>
-				</section>
-
-				<section>
-					<h2>Código</h2>
-                    <p>para inserir trechos de código no slide basta seguir a seguinte formação:</p>
-					<pre>
-                        <code class="HTML" data-trim>
-&lt;pre&gt;
-    &lt;code class="php" data-trim&gt;
-    &lt;/code&gt;
-&lt;/pre&gt;
-                        </code>
-                    </pre>
-				</section>
-
-				<section class="poll" data-number="1">
-                    <p>Enquetes</p>
-                    <p>Adicione na tag section um atributo data-number com um valor único para criar enquetes</p>
-                    <p>Tambem adicione a classe pool na section</p>
-                    <p>Use esse slide como exemplo</p>
-
-                    <div class="button-level" data-value="sim">
-                        <span>Sim (<b>0</b>)</span>
-                        <div class="level green"></div>
-                    </div>
-
-                    <div class="button-level" data-value="não">
-                        <span>Não (<b>0</b>)</span>
-                        <div class="level red"></div>
-                    </div>
-                </section>
-
-                <section class="sound-suspense02">
-                    <p>Som</p>
-                    <p>Para adcionar sons, você deve alterar o arquivo "public/js/modules/sound.js" e incluir uma classe sound-* na section</p>
-                    <p>Use esse slide como exemplo</p>
-                </section>
-
-                <section>
-                    <p>Mantenha Esses Slides</p>
-                    <p>Insira seus slides após esse slide e mantenha os slides de exemplo para que outros palestrantes possam ver também</p>
-                    <p>Envie-nos um Pull Request até 10/01/2016</p>
-                </section>
-
-                <!-- react além dos websockets -->
+                <!-- React Além dos Websockets -->
+                <!-- Nickolas "Nawarian" -->
                 <section>
                   <section>
                     <h2>
@@ -835,7 +810,8 @@ $runar->start()
           </h2>
         </section>
 
-                <!-- Slides JWT - Ivan Rosolen -->
+                <!-- Slides JWT -->
+                <!-- Ivan Rosolen -->
                 <section>
                     <h1>JSON WEB TOKEN</h1>
                     <h4>Ivan Rosolen</h4>
@@ -1254,14 +1230,39 @@ return false;
                         <div class="level green"></div>
                     </div>
 
-                    <div class="button-level" data-value="change">
-                        <span>Troque de Tema (<b>0</b>)</span>
+                    <div class="button-level medium-poll" data-value="php7">
+                        <span>PHP7 (<b>0</b>)</span>
+                        <div class="level red"></div>
+                    </div>
+
+                    <div class="button-level medium-poll" data-value="psr7">
+                        <span>PSR7 e Demais PSR's (<b>0</b>)</span>
+                        <div class="level red"></div>
+                    </div>
+
+                    <div class="button-level medium-poll" data-value="frameworks">
+                        <span>Frameworks e Microframeworks (<b>0</b>)</span>
+                        <div class="level red"></div>
+                    </div>
+
+                    <div class="button-level medium-poll" data-value="diversidade">
+                        <span>Diversidade na Tecnologia (<b>0</b>)</span>
+                        <div class="level red"></div>
+                    </div>
+
+                    <div class="button-level medium-poll" data-value="ci">
+                        <span>Integração Continua e Deploy (<b>0</b>)</span>
+                        <div class="level red"></div>
+                    </div>
+
+                    <div class="button-level medium-poll" data-value="testes">
+                        <span>Testes de Software (<b>0</b>)</span>
                         <div class="level red"></div>
                     </div>
 
                     <?php if ($mode == 'presenter') : ?>
-                        <div class="button-level" data-value="clean">
-                            <span>limpar Dados (<b>0</b>)</span>
+                        <div class="button-level small-poll" data-value="clean">
+                            <span>Limpar Dados <b></b></span>
                             <div class="level red"></div>
                         </div>
                     <?php endif; ?>

@@ -32,11 +32,11 @@
 		</script>
 
         <style>
-            #loginForm{display: block; width: 100%; text-align: left; box-sizing: border-box; padding: 0 10%;}
+            #loginForm{display: block; width: 100%; text-align: left; box-sizing: border-box; padding: 0 10%; font-size: 100%}
             #loginForm label{display: block; width: 100%;}
-            #loginForm input{display: block; width: 100%; margin-bottom: 2em;}
-            #loginForm button{display: block; float: right;}
-            #loginForm small{display: block; font-size: 0.4em}
+            #loginForm input{display: block; width: 100%; margin-bottom: 1em; font-size: 1.2em;}
+            #loginForm button{display: block; float: right; font-size: 1.2em}
+            #loginForm small{display: block; font-size: 0.6em}
         </style>
 
 		<!--[if lt IE 9]><script src="lib/js/html5shiv.js"></script><![endif]-->
@@ -52,6 +52,9 @@
                 <section>
                     <h2>Acesso aos Slides</h2>
                     <form method="post" id="loginForm">
+                        <label for="name">Nome</label>
+                        <input type="text" name="name" id="name">
+
                         <label for="mail">Email</label>
                         <input type="text" name="mail" id="mail">
 

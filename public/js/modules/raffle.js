@@ -25,7 +25,7 @@ Modules.raffle = {
 				$(".winner-message").html('Parabens Você é O Vencedor');
 			}
 
-			$(".winner-nickname").html(data.nickname);
+			$(".winner-nickname").html(data.name);
 		}
 	}
 };

@@ -34,6 +34,7 @@ $app->get('/', function() use ($app) {
     $data = [
         'host' => $_SERVER['HTTP_HOST'],
         'mode' => $mode,
+        //'websocketsAddress' => $host . ':7888?session=' . $md5
         'websocketsAddress' => 'node79991-seminariophpsp.jelasticlw.com.br:11006?session=' . $md5
     ];
 
@@ -47,11 +48,13 @@ $app->post('/', function(Request $request) use ($app) {
 
         //Grava na sessão que o visitante é o apresentador
         Session::put('mode', 'presenter');
+        Session::put('name', $request->input('name'));
         Session::put('nickname', 'admin@admin.com.br');
 
         if (! \Cache::has($md5)) {
             $cache = [];
             $cache['mode'] = 'presenter';
+            $cache['name'] = $request->input('name');
             $cache['nickname'] = 'admin@admin.com.br';
 
             \Cache::forever($md5, $cache);
@@ -60,11 +63,13 @@ $app->post('/', function(Request $request) use ($app) {
         $md5 = md5(Session::getId());
 
         Session::put('mode', 'participant');
+        Session::put('name', $request->input('name'));
         Session::put('nickname', $request->input('mail'));
 
         if (! \Cache::has($md5)) {
             $cache = [];
             $cache['mode'] = 'participant';
+            $cache['name'] = $request->input('name');
             $cache['nickname'] = $request->input('mail');
 
             \Cache::forever($md5, $cache);

@@ -133,7 +133,7 @@ class Controller implements MessageComponentInterface
                 if ($anotherConnection !== $connection) {
                     $cache = \Cache::get($anotherConnection->session);
 
-                    if (!isset($usersToSort[$cache['nickname']])) {
+                    if (!isset($usersToSort[$cache['nickname']]) and $cache['mode'] != 'presenter') {
                         $usersToSort[$cache['nickname']] = $anotherConnection;
                     }
                 }
@@ -143,7 +143,7 @@ class Controller implements MessageComponentInterface
             $winnerCache = \Cache::get($usersToSort[$winnerPointer]->session);
             Log::d('Winner: '.$winnerCache['nickname']);
 
-            $resultMessage = new RaffleResultMessage($winnerCache['nickname']);
+            $resultMessage = new RaffleResultMessage($winnerCache['nickname'], $winnerCache['name']);
 
             foreach (self::$connections as $anotherConnection) {
                 if ($anotherConnection !== $usersToSort[$winnerPointer]) {
