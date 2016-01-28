@@ -720,6 +720,10 @@ switch(type) {
                     </section>
                 </section>
                 <section>
+                    <h1>Protoboard</h1>
+                    <img src="images/rgb-led-strips-mosfets.png" />
+                </section>
+                <section>
                     <h1>Resultado Final</h1>
                     <h2>Cor Atual <span id="corAtual"></span></h2>
                     <button class="button-arduino amarelo" data-value="amarelo">Amarelo</button>
