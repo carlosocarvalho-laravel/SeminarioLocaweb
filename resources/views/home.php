@@ -991,7 +991,7 @@ $runar->start()
                 </section>
 
                 <section>
-                    <h1>JWT</h4>
+                    <h1>JWT</h1>
                         <h4>eyJ0eXAiOiAiSldUIiwiYWxnIjogIkhTMjU2In0=</h4>
                         <h4>.</h4>
                         <h4>eyJpc3MiOiAiaXZhbnJvc29sZW4uY29tIiwiZXhwIjogMTMwMDgxOTM4MCwibmFtZSI6ICJJdmFuIFJvc29sZW4iLCJhZG1pbiI6IHRydWV9</h4>
@@ -1028,7 +1028,7 @@ HMACSHA256(encodedString, 'Xuplau');
                 </section>
 
                 <section>
-                    <h1>JWT</h4>
+                    <h1>JWT</h1>
                         <h4>eyJ0eXAiOiAiSldUIiwiYWxnIjogIkhTMjU2In0=</h4>
                         <h4>.</h4>
                         <h4>eyJpc3MiOiAiaXZhbnJvc29sZW4uY29tIiwiZXhwIjogMTMwMDgxOTM4MCwibmFtZSI6ICJJdmFuIFJvc29sZW4iLCJhZG1pbiI6IHRydWV9</h4>
@@ -1268,21 +1268,6 @@ return false;
                         </div>
                     <?php endif; ?>
                 </section>
-
-                <!-- Sorteio -->
-                <section class="raffle" data-number="pannel" data-change="true">
-                    <h2 class="winner-message"></h2>
-                    <p>Vencedor</p>
-                    <p class="winner-nickname"></p>
-
-                    <?php if ($mode == 'presenter') : ?>
-                        <div class="button-level" data-value="raffle">
-                            <span>Sortear</span>
-                            <div class="level green"></div>
-                        </div>
-                    <?php endif; ?>
-                </section>
-
 
                 <!-- PALESTRA AUTOMAÇÃO RESIDENCIAL - DIEGO PIRES//-->
                 <section class="">
@@ -1887,6 +1872,20 @@ switch(type) {
                     <a href="https://github.com/diegocpires/WebsocketLocaweb">https://github.com/diegocpires/WebsocketLocaweb</a><br />
                     <a href="https://github.com/diegocpires/ArduinoLocaweb">https://github.com/diegocpires/ArduinoLocaweb</a><br />
 
+                </section>
+
+                <!-- Sorteio -->
+                <section class="raffle" data-number="pannel" data-change="true">
+                    <h2 class="winner-message"></h2>
+                    <p>Vencedor</p>
+                    <p class="winner-nickname"></p>
+
+                    <?php if ($mode == 'presenter') : ?>
+                        <div class="button-level" data-value="raffle">
+                            <span>Sortear</span>
+                            <div class="level green"></div>
+                        </div>
+                    <?php endif; ?>
                 </section>
 
 
