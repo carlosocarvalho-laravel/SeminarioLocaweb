@@ -1,59 +1,53 @@
-Modules.chat = {
-	start: function () {
-		Reveal.addEventListener('slidechanged', function( event ) {
-			Modules.chat.checkCurrentSlide(event.currentSlide);
+Modules.arduino = {
+	start: function() {
+		$(".button-arduino").on('tap click', function(e) {
+			e.preventDefault();
+
+			//ratchet.emit('arduino', {command: $(this).attr('data-value')});
+			$("#corAtual").html($(this).attr('data-value'));
+			objEnviar = {};
+			objEnviar.command = $(this).attr('data-value');
+			objEnviar.type = 'arduino';
+			Arduino.conn.send(JSON.stringify(objEnviar));
+
+			$(".button-arduino").attr('disabled','disabled');
+			$(".button-arduino").addClass('classGray');
+			window.setTimeout(function() {
+				$(".button-arduino").removeAttr('disabled');
+				$(".button-arduino").removeClass('classGray');
+			}, 2500);
 		});
 
-		$('div.chat .button').on('tap click', function(event) {
-			event.preventDefault();
-			Modules.chat.sendMessage();
-		});
+		Arduino.conn = new WebSocket('ws://piresedias.com.br:8888');
+		Arduino.conn.onopen = function(e) {
+			console.log("Websocket Server Arduino OK!");
+		};
 
-		$('div.chat input').on('keypress', function(e) {
-		    if(e.which == 13) {
-		        Modules.chat.sendMessage();
-		    }
-		});
+		Arduino.conn.onmessage = function(e) {
+
+			data = JSON.parse(e.data);
+			if (data.type == 'arduino') {
+
+				$(".button-arduino").attr('disabled','disabled');
+
+				$(".button-arduino").addClass('classGray');
+				$("#corAtual").html(data.command);
+
+				window.setTimeout(function() {
+					$(".button-arduino").removeAttr('disabled');
+					$(".button-arduino").removeClass('classGray');
+				}, 2500);
+
+			}
+		};
 
 		ratchet.on(1, this.callback);
 
-		Modules.chat.checkCurrentSlide(Reveal.getCurrentSlide());
 	},
-
 	callback: function(data) {
-		if (data.type == 'chat') {
-			$('div.chat .messages').prepend('<p><strong>' + data.nickname + '</strong>: ' + data.message + '</p>');
+		if (data.type == 'arduino') {
+			$("#corAtual").html(data.command);
+
 		}
 	},
-
-	checkCurrentSlide: function(currentSlide) {
-		if ($(currentSlide).hasClass('chat-slide') && $('body').attr('data-mode') != 'presenter') {
-			if (!Modules.chat.initialized) {
-				Modules.chat.init();
-				$('div.chat').show();
-			}
-		} else {
-			if (Modules.chat.initialized) {
-				Modules.chat.initialized = false;
-				$('div.chat').hide();
-			}
-		}
-	},
-
-	initialized: false,
-
-	init: function() {
-		Modules.chat.initialized = true;
-	},
-
-	sendMessage: function() {
-		var message = $('div.chat input[type="text"]').val();
-
-		if (message != '') {
-			ratchet.emit('chat', {message: message});
-			$('div.chat .messages').prepend('<p class="me"><strong>[EU]</strong>: ' + message + '</p>');
-			$('div.chat input[type="text"]').val('');
-			Modules.sound.horn();
-		}
-	}
 }
