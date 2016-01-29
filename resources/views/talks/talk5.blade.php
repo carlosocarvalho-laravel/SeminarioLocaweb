@@ -25,8 +25,8 @@
 <section>
     <h2>Protocolo HTTP</h2>
     <ul>
-        <li>Client/Server</li>
-        <li>Request/Response</li>
+        <li>Um cliente envia uma requisição</li>
+        <li>Um servidor retorna uma resposta</li>
     </ul>
 </section>
 
@@ -76,7 +76,6 @@ Eae mano! Eu to bão, e vc?
     <ul>
         <li>Também estão no $_SERVER, com o prefixo "HTTP_"</li>
         <li>Mas nem todos estão prefixados</li>
-        <li>Normalização contraintuitiva</li>
     </ul>
 </section>
 
@@ -148,7 +147,6 @@ Eae mano! Eu to bão, e vc?
     <ul>
         <li class="fragment">O PHP fornece abstrações para os streams de entrada e saída</li>
         <li class="fragment">Até o PHP 5.6, o php://input é read-once</li>
-        <li class="fragment">php://output - "Headers already sent"</li>
     </ul>
 </section>
 
@@ -204,6 +202,20 @@ Eae mano! Eu to bão, e vc?
     <h1>PSR-7</h1>
 </section>
 
+<section class="poll" data-number="danizord-1">
+    <p>Você já utilizou as interfaces da PSR-7 em algum projeto?</p>
+
+    <div class="button-level" data-value="sim">
+        <span>Sim (<b>0</b>)</span>
+        <div class="level green"></div>
+    </div>
+
+    <div class="button-level" data-value="não">
+        <span>Não (<b>0</b>)</span>
+        <div class="level red"></div>
+    </div>
+</section>
+
 <section>
     <ul>
         <li>Psr\Http\Message\MessageInterface</li>
@@ -236,7 +248,7 @@ Eae mano! Eu to bão, e vc?
     <p style="color:blue" class="fragment">Funciona em qualquer framework.</p>
 </section>
 
-<section data-background="/images/danizord/whoa.gif">
+<section data-background="/images/danizord/nice.gif">
 </section>
 
 <section>
@@ -251,6 +263,20 @@ Eae mano! Eu to bão, e vc?
 <section>
     <h2>De hoje em diante:</h2>
     <h1 class="fragment">Middlewares</h1>
+</section>
+
+<section class="poll" data-number="danizord-2">
+    <p>Você já utilizou middlewares em algum projeto?</p>
+
+    <div class="button-level" data-value="sim">
+        <span>Sim (<b>0</b>)</span>
+        <div class="level green"></div>
+    </div>
+
+    <div class="button-level" data-value="não">
+        <span>Não (<b>0</b>)</span>
+        <div class="level red"></div>
+    </div>
 </section>
 
 <section data-background="#ffffff">
@@ -283,6 +309,81 @@ function (
     <h2>Unix philosophy</h2>
 </section>
 
+<section data-background="#ffffff">
+    <img src="/images/danizord/middleware.png">
+</section>
+
+<section>
+    <h1>Exemplos</h1>
+</section>
+
+<section>
+    <pre><code class="hljs php" data-trim>
+class LoggerMiddleware {
+    // ...
+    public function __invoke($req, $res, $next) {
+        $this->logger->log('Passou aqui :D');
+
+        return $next($req, $res);
+    }
+}
+    </code></pre>
+</section>
+
+<section>
+    <pre><code class="php" data-trim>
+class AuthenticationMiddleware {
+    // ...
+   public function __invoke($req, $res, $next) {
+      try {
+          $user = $this->authenticationService->authenticate($req);
+      } catch (Exception $exception) {
+          return $res->withStatusCode(401);
+      }
+
+      $req = $req->withAttribute('user', $user);
+
+      return $next($req, $res);
+    }
+}
+    </code></pre>
+</section>
+
+<section>
+    <pre><code class="hljs php" data-trim>
+class ResponseMinifierMiddleware {
+    // ...
+    public function __invoke($req, $res, $next) {
+        $res          = $next($req, $res);
+        $minifiedBody = $this->minifier->minify($res->getBody());
+
+        return $res->withBody($minifiedBody);
+    }
+}
+    </code></pre>
+</section>
+
+<section>
+    <pre><code class="hljs php" data-trim>
+class CacheMiddleware {
+    // ...
+    public function __invoke($req, $res, $next) {
+        $uri = $req->getUri();
+
+        if ($this->cache->has($uri)) {
+            return $cache->get($uri);
+        }
+
+        $res = $next($req, $res);
+
+        $this->cache->save($uri, $res);
+
+        $res;
+    }
+}
+    </code></pre>
+</section>
+
 <section>
     <h2>Middleware dispatchers</h2>
     <ul>
@@ -294,7 +395,70 @@ function (
 </section>
 
 <section>
-    <h1>?</h1>
+    <h2>Zend\Expressive</h2>
+    <ul>
+        <li>Baseado no Zend\Stratigility</li>
+        <li>Routing</li>
+        <li>Dependency injection</li>
+        <li>Templating</li>
+        <li>Error Handling</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Migração de MVC para Middlewares</h2>
+    <ul>
+        <li>A maioria dos frameworks já suportam a PSR-7</li>
+        <li>Você pode colocar a aplicação inteira dentro de um middleware</li>
+        <li>Migrar controllers para middlewares gradualmente</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Alguns projetos interessantes</h2>
+    <ul>
+        <li class="fragment">https://github.com/Ocramius/PSR7Session</li>
+        <li class="fragment">https://github.com/oscarotero/psr7-middlewares</li>
+        <li class="fragment">https://github.com/PHPFastCGI/ExpressiveAdapter</li>
+        <li class="fragment">https://github.com/zfcampus/zf-apigility</li>
+        <li class="fragment">https://github.com/ZF-Commons/zfc-rbac</li>
+        <li class="fragment">https://github.com/zf-fr/zfr-oauth2-server</li>
+    </ul>
+</section>
+
+<section class="poll" data-number="danizord-3">
+    <p>Você pretende usar Middlewares em projetos futuros?</p>
+
+    <div class="button-level" data-value="sim">
+        <span>Sim (<b>0</b>)</span>
+        <div class="level green"></div>
+    </div>
+
+    <div class="button-level" data-value="não">
+        <span>Não (<b>0</b>)</span>
+        <div class="level red"></div>
+    </div>
+</section>
+
+<section data-background="/images/danizord/whoa.gif">
+</section>
+
+<section>
+    <h1>Perguntas?</h1>
+</section>
+
+<section>
+    <h2>Créditos</h2>
+    <ul>
+        <li>https://zendframework.github.io/zend-expressive/</li>
+        <li>http://www.php-fig.org/psr/psr-7/</li>
+        <li>http://2015.phpday.it/talk/pushing-boundaries-zend-framework-3-and-the-future/</li>
+        <li>https://mwop.net/blog/2016-01-28-expressive-stable.html</li>
+        <li>https://mwop.net/blog/2015-01-26-psr-7-by-example.html</li>
+        <li>https://mwop.net/blog/2015-01-08-on-http-middleware-and-psr-7.html</li>
+        <li>http://weierophinney.github.io/2015-10-20-PSR-7-and-Middleware</li>
+        <li>http://stackphp.com/</li>
+    </ul>
 </section>
 
 <section>
