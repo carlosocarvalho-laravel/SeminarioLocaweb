@@ -34,8 +34,8 @@ $app->get('/', function() use ($app) {
     $data = [
         'host' => $_SERVER['HTTP_HOST'],
         'mode' => $mode,
-        'websocketsAddress' => $host . ':7888?session=' . $md5
-        //'websocketsAddress' => 'node79991-seminariophpsp.jelasticlw.com.br:11006?session=' . $md5
+        //'websocketsAddress' => $host . ':7888?session=' . $md5
+        'websocketsAddress' => 'node79991-seminariophpsp.jelasticlw.com.br:11006?session=' . $md5
     ];
 
     return view('home', $data);
