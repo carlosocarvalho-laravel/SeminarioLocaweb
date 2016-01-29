@@ -82,7 +82,7 @@
 			</div>
 		</div>
 
-        <img onclick="toggleFullScreen();" src="images/fullscreen.png" style="position: fixed; bottom: 1em; right: 1em; width:2 em; z-index: 9999999;">
+        <img class="fullscreenimg" onclick="toggleFullScreen();" src="images/fullscreen.png" style="position: fixed; bottom: 1em; right: 1em; width:2 em; z-index: 9999999;">
 
 		<script src="js/plugins/jquery.min.js"></script>
 		<script src="lib/js/head.min.js"></script>
