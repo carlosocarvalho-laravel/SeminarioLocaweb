@@ -1,0 +1,23 @@
+.medium-poll {
+    float: left;
+    font-size: 0.5em;
+    width: 28%;
+}
+
+.medium-poll:nth-child(3), .medium-poll:nth-child(6) {
+    float: right;
+    margin-right: 0px;
+}
+
+.medium-poll span {
+    padding: 40px 20px;
+    font-size: 60%;
+}
+
+.button-level.small-poll {
+    clear: both;
+}
+
+.button-level.small-poll span b {
+    display: none;
+}

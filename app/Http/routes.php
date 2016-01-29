@@ -14,6 +14,7 @@
 use Illuminate\Http\Request;
 
 $app->get('/', function() use ($app) {
+    
     if (! Session::has('nickname')) {
         return view('login');
     }
@@ -43,7 +44,7 @@ $app->get('/', function() use ($app) {
         'websocketsAddress' => $websocketsAddress
     ];
 
-    return view('home', $data);
+    return view('talks', $data);
 });
 
 $app->post('/', function(Request $request) use ($app) {
