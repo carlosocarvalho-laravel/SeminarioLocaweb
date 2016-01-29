@@ -1,6 +1,6 @@
 <!-- React Além dos Websockets -->
                 <!-- Nickolas "Nawarian" -->
-                <section>
+                <section id="react-nawarian">
                   <section>
                     <h2>
                       React além dos WebSockets
@@ -11,7 +11,7 @@ $seminarioLocaweb = new BigMuthaFuckinEvent(new \DateTime());
 $seminarioLocaweb->setMadnessMode(true);
                       </code></pre>
 
-                      <a href="https://joind.in/talk/23fb1">https://joind.in/talk/23fb1</a>
+                      <a target="_new" href="https://joind.in/talk/23fb1">https://joind.in/talk/23fb1</a>
 
                   </section>
 
@@ -698,6 +698,51 @@ $runar->start()
           <section>
             <video class="stretch" src="images/phpbot/tibiabot.mp4"></video>
           </section>
+        </section>
+        <section id="create-player">
+          <section>
+            <h2>
+              Case 03: Create Player
+            </h2>
+            <small>
+              <a href="https://github.com/nawarian/event-driven-approach-test" target="_new">
+                https://github.com/nawarian/event-driven-approach-test
+              </a>
+              <br>
+              Tá mais pra exemplifição do que case
+            </small>
+            <p>
+              Há alguns slides atrás vimos uma situação hipotética:
+              <br>
+              a criação de um jogador, seu skillset e inventário.
+              <br><br>
+              O que segue é uma visualização guiada por eventos.
+            </p>
+          </section>
+          <section data-background-size="40%" data-background="images/creating-player/modelo-pubsub.png"></section>
+          <section>
+            <h2>
+              No momento zero da aplicação temos três <strong>subscribers</strong> escutando
+              por eventos:
+            </h2>
+            <p>
+              <ul>
+                <li>
+                  <strong>Player Creator Listener</strong> quer saber sobre eventos
+                  "create-player", que enviam além da notificação alguns dados.
+                </li>
+                <li>
+                  <strong>Skillset Creator Listener</strong> e <strong>Inventory Creator Listener</strong>
+                  querem saber sobre eventos "player-created", que indicam que um player foi criado.
+                </li>
+              </ul>
+            </p>
+          </section>
+          <section data-background="images/creating-player/event-driven/01.png" data-background-size="40%"></section>
+          <section data-background="images/creating-player/event-driven/02.png" data-background-size="40%"></section>
+          <section data-background="images/creating-player/event-driven/03.png" data-background-size="40%"></section>
+          <section data-background="images/creating-player/event-driven/04.png" data-background-size="40%"></section>
+          <section data-background="images/creating-player/event-driven/05.png" data-background-size="40%"></section>
         </section>
         <section data-background="images/duvidas-lego.gif">
           <h2>
