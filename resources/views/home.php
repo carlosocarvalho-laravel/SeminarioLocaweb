@@ -132,7 +132,7 @@
                 </section>
 
                 <!-- pool-01 -->
-                <section data-background="#424242" class="poll functional-poll" data-number="1">
+                <section data-background="#424242" class="poll functional-poll" data-number="funcional-1">
                     <h1 class="poll-title">Pergunta!</h1>
                     <p class="poll-question">Você sabe o que é programação funcional?</p>
 
@@ -1798,7 +1798,7 @@ return false;
                     </ul>
                 </section>
 
-                <section class="poll" data-number="1">
+                <section class="poll" data-number="arduino-1">
                     <p>Enquete</p>
                     <p>Você já "brincou" ou conhece Arduino?</p>
 
