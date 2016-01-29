@@ -677,6 +677,97 @@
                     <img src="images/eda/mamute-extinto.png" />
                 </section>
 
+                <section>
+                    <h1>Como costumamos desenvolver software hoje em dia?</h1>
+
+                    <ul>
+                        <li>Colhemos os requisitos</li>
+                        <li>Escolhemos a tecnologia</li>
+                        <li>Criamos <strong>O SISTEMA</strong></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>O SISTEMA</h1>
+
+                    <img src="images/eda/monolito.jpg"/>
+                </section>
+
+                <section>
+                    <h1>Surgem novos requisitos</h1>
+
+                    <img src="images/eda/esfinge.jpg"/>
+                </section>
+
+                <section>
+                    <h1>Algum tempo depois</h1>
+
+                    <img src="images/eda/esfinge-fail.jpg"/>
+                </section>
+
+                <section>
+                    <h1>E esse tal de EDA?</h1>
+
+                    <p>Foco nos eventos!!!</p>
+                    <img src="images/eda/really.jpg" />
+                </section>
+
+                <section>
+                    <h1>E esse tal de EDA?</h1>
+
+                    <ul>
+                        <li>Distribuído e assíncrono por natureza</li>
+                        <li>Altamente desacoplado</li>
+                        <li>Altamente escalável</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>E esse tal de EDA?</h1>
+
+                    <img src="images/eda/processamento-eventos.png" />
+                </section>
+
+                <section>
+                    <h1>Vamos nomear os bois</h1>
+
+                    <img src="images/eda/nomeando-bois.jpg" />
+                </section>
+
+                <section>
+                    <h1>Event</h1>
+
+                    <img src="images/eda/snake-visible.jpg" />
+                </section>
+
+                <section class="sound-mgsalert">
+                    <h1>Event Generator</h1>
+
+                    <img src="images/eda/snake-visible.jpg" />
+                </section>
+
+                <section>
+                    <h1>Event Channel</h1>
+
+                    <img src="images/eda/alert.gif" />
+                </section>
+
+                <section>
+                    <h1>Event Processor</h1>
+
+                    <img src="images/eda/processor-a.jpg" />
+                </section>
+
+                <section>
+                    <h1>Event Processor</h1>
+
+                    <img src="images/eda/processor-b.jpg" />
+                </section>
+
+                <section>
+                    <img src="images/eda/broker.png">
+                </section>
+
                 <!-- React Além dos Websockets -->
                 <!-- Nickolas "Nawarian" -->
                 <section>
