@@ -16,6 +16,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/diego.css">
+    <link rel="stylesheet" href="css/marcel.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,900' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/theme/league.css" id="theme">
 
 		<!-- Code syntax highlighting -->
@@ -33,17 +36,17 @@
             function toggleFullScreen() {
               var noSleep = new NoSleep();
               noSleep.enable();
-              if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-               (!document.mozFullScrgit pull https://github.com/nawarian/SeminarioLocaweb.git mastereen && !document.webkitIsFullScreen)) {
-                if (document.documentElement.requestFullScreen) {
-                  document.documentElement.requestFullScreen();
-                } else if (document.documentElement.mozRequestFullScreen) {
-                  document.documentElement.mozRequestFullScreen();
-                } else if (document.documentElement.webkitRequestFullScreen) {
-                  document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-                }
-              } else {
-                if (document.cancelFullScreen) {
+                if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+                    (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+                    if (document.documentElement.requestFullScreen) {
+                        document.documentElement.requestFullScreen();
+                    } else if (document.documentElement.mozRequestFullScreen) {
+                        document.documentElement.mozRequestFullScreen();
+                    } else if (document.documentElement.webkitRequestFullScreen) {
+                        document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+                    }
+                } else {
+                    if (document.cancelFullScreen) {
                   document.cancelFullScreen();
                 } else if (document.mozCancelFullScreen) {
                   document.mozCancelFullScreen();
@@ -98,6 +101,509 @@
                     <p><img src="images/navegadores.png" /></p>
                     <p><a href="http://seminariophpsp.jelasticlw.com.br/">http://seminariophpsp.jelasticlw.com.br/</a></p>
                     <h4><a href="https://github.com/PHPSP/docs/blob/master/codigo-de-conduta.md">Código de Conduta</a></h4>
+                </section>
+
+<<<<<<< HEAD
+=======
+                <!-- Programação Funcional em PHP -->
+                <!-- Marcel Gonçalves dos Santos -->
+
+                <!-- slide-01 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-01.jpeg">
+                </section>
+
+                <!-- slide-02 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-02.jpeg">
+                </section>
+
+                <!-- slide-03 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-03.jpeg">
+                </section>
+
+                <!-- slide-04 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-04.jpeg">
+                </section>
+
+                <!-- slide-05 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-05.jpeg">
+                </section>
+
+                <!-- pool-01 -->
+                <section data-background="#424242" class="poll functional-poll" data-number="funcional-1">
+                    <h1 class="poll-title">Pergunta!</h1>
+                    <p class="poll-question">Você sabe o que é programação funcional?</p>
+
+                    <div class="button-level" data-value="sim">
+                        <span>Sim (<b>0</b>)</span>
+                        <div class="level green"></div>
+                    </div>
+
+                    <div class="button-level" data-value="não">
+                        <span>Não (<b>0</b>)</span>
+                        <div class="level red"></div>
+                    </div>
+                </section>
+
+                <!-- slide-06 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-06.jpeg">
+                </section>
+
+                <!-- slide-07 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-07.jpeg">
+                </section>
+
+                <!-- slide-08 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-08.jpeg">
+                </section>
+
+                <!-- slide-09 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-09.jpeg">
+                </section>
+
+                <!-- slide-10 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-10.jpeg">
+                </section>
+
+                <!-- slide-11 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-11.jpeg">
+                </section>
+
+                <!-- slide-12 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-12.jpeg">
+                </section>
+
+                <!-- slide-13 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-13.jpeg">
+                </section>
+
+                <!-- slide-14 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-14.jpeg">
+                </section>
+
+                <!-- slide-15 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-15.jpeg">
+                </section>
+
+                <!-- slide-16 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-16.jpeg">
+                </section>
+
+                <!-- slide-17 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-17.jpeg">
+                </section>
+
+                <!-- slide-18 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-18.jpeg">
+                </section>
+
+                <!-- slide-19 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-19.jpeg">
+                </section>
+
+                <!-- slide-20 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-20.jpeg">
+                </section>
+
+                <!-- slide-21 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-21.jpeg">
+                </section>
+
+                <!-- slide-22 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-22.jpeg">
+                </section>
+
+                <!-- slide-23 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-23.jpeg">
+                </section>
+
+                <!-- slide-24 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-24.jpeg">
+                </section>
+
+                <!-- slide-25 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-25.jpeg">
+                </section>
+
+                <!-- slide-26 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-26.jpeg">
+                </section>
+
+                <!-- slide-27 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-27.jpeg">
+                </section>
+
+                <!-- slide-28 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-28.jpeg">
+                </section>
+
+                <!-- slide-29 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-19.jpeg">
+                </section>
+
+                <!-- slide-30 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-30.jpeg">
+                </section>
+
+                <!-- slide-31 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-31.jpeg">
+                </section>
+
+                <!-- pool-02 -->
+                <section data-background="#424242" class="poll functional-poll" data-number="2">
+                    <h1 class="poll-title">Pergunta!</h1>
+                    <p class="poll-question">A função do slide anterior é uma função pura?</p>
+
+                    <div class="button-level" data-value="sim">
+                        <span>Sim (<b>0</b>)</span>
+                        <div class="level green"></div>
+                    </div>
+
+                    <div class="button-level" data-value="não">
+                        <span>Não (<b>0</b>)</span>
+                        <div class="level red"></div>
+                    </div>
+                </section>
+
+                <!-- slide-32 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-32.jpeg">
+                </section>
+
+                <!-- slide-33 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-33.jpeg">
+                </section>
+
+                <!-- slide-34 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-34.jpeg">
+                </section>
+
+                <!-- slide-35 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-35.jpeg">
+                </section>
+
+                <!-- slide-36 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-36.jpeg">
+                </section>
+
+                <!-- slide-37 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-37.jpeg">
+                </section>
+
+                <!-- slide-38 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-38.jpeg">
+                </section>
+
+                <!-- slide-39 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-39.jpeg">
+                </section>
+
+                <!-- slide-40 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-40.jpeg">
+                </section>
+
+                <!-- slide-41 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-41.jpeg">
+                </section>
+
+                <!-- slide-42 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-42.jpeg">
+                </section>
+
+                <!-- slide-43 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-43.jpeg">
+                </section>
+
+                <!-- slide-44 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-44.jpeg">
+                </section>
+
+                <!-- slide-45 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-45.jpeg">
+                </section>
+
+                <!-- pool-03 -->
+                <section data-background="#424242" class="poll functional-poll" data-number="3">
+                    <h1 class="poll-title">Pergunta!</h1>
+                    <p class="poll-question">Qual será o resultado de <code>print $sayHello('John')</code> do slide anterior?</p>
+
+                    <div class="button-level" data-value="hello-john">
+                        <span>Hello John! (<b>0</b>)</span>
+                        <div class="level green"></div>
+                    </div>
+
+                    <div class="button-level" data-value="hello">
+                        <span>Hello ! (<b>0</b>)</span>
+                        <div class="level red"></div>
+                    </div>
+                </section>
+
+                <!-- slide-46 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-46.jpeg">
+                </section>
+
+                <!-- slide-47 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-47.jpeg">
+                </section>
+
+                <!-- slide-48 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-48.jpeg">
+                </section>
+
+                <!-- slide-49 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-49.jpeg">
+                </section>
+
+                <!-- slide-50 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-50.jpeg">
+                </section>
+
+                <!-- slide-51 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-51.jpeg">
+                </section>
+
+                <!-- slide-52 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-52.jpeg">
+                </section>
+
+                <!-- slide-53 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-53.jpeg">
+                </section>
+
+                <!-- slide-54 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-54.jpeg">
+                </section>
+
+                <!-- slide-55 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-55.jpeg">
+                </section>
+
+                <!-- slide-56 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-56.jpeg">
+                </section>
+
+                <!-- slide-57 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-57.jpeg">
+                </section>
+
+                <!-- slide-58 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-58.jpeg">
+                </section>
+
+                <!-- slide-59 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-59.jpeg">
+                </section>
+
+                <!-- slide-60 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-60.jpeg">
+                </section>
+
+                <!-- slide-61 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-61.jpeg">
+                </section>
+
+                <!-- slide-62 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-62.jpeg">
+                </section>
+
+                <!-- slide-63 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-63.jpeg">
+                </section>
+
+                <!-- slide-64 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-64.jpeg">
+                </section>
+
+                <!-- slide-65 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-65.jpeg">
+                </section>
+
+                <!-- slide-66 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-66.jpeg">
+                </section>
+
+                <!-- slide-67 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-67.jpeg">
+                </section>
+
+                <!-- slide-68 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-68.jpeg">
+                </section>
+
+                <!-- slide-69 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-69.jpeg">
+                </section>
+
+                <!-- slide-70 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-70.jpeg">
+                </section>
+
+                <!-- slide-71 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-71.jpeg">
+                </section>
+
+                <!-- slide-72 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-72.jpeg">
+                </section>
+
+                <!-- slide-73 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-73.jpeg">
+                </section>
+
+                <!-- slide-74 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-74.jpeg">
+                </section>
+
+                <!-- slide-75 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-75.jpeg">
+                </section>
+
+                <!-- slide-76 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-76.jpeg">
+                </section>
+
+                <!-- slide-77 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-77.jpeg">
+                </section>
+
+                <!-- slide-78 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-78.jpeg">
+                </section>
+
+                <!-- slide-79 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-79.jpeg">
+                </section>
+
+                <!-- slide-80 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-80.jpeg">
+                </section>
+
+                <!-- slide-81 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-81.jpeg">
+                </section>
+
+                <!-- slide-82 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-82.jpeg">
+                </section>
+
+                <!-- slide-83 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-83.jpeg">
+                </section>
+
+                <!-- slide-84 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-84.jpeg">
+                </section>
+
+                <!-- slide-85 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-85.jpeg">
+                </section>
+
+                <!-- slide-86 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-86.jpeg">
+                </section>
+
+                <!-- slide-87 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-87.jpeg">
+                </section>
+
+                <!-- slide-88 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-88.jpeg">
+                </section>
+
+                <!-- slide-89 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-89.jpeg">
+                </section>
+
+                <!-- slide-90 -->
+                <section data-background="#424242">
+                    <img src="images/funcional/slide-90.jpeg">
                 </section>
 
                 <!-- Slides EDA -->
@@ -1060,7 +1566,7 @@ $runar->start()
                 </section>
 
                 <section>
-                    <h1>JWT</h4>
+                    <h1>JWT</h1>
                         <h4>eyJ0eXAiOiAiSldUIiwiYWxnIjogIkhTMjU2In0=</h4>
                         <h4>.</h4>
                         <h4>eyJpc3MiOiAiaXZhbnJvc29sZW4uY29tIiwiZXhwIjogMTMwMDgxOTM4MCwibmFtZSI6ICJJdmFuIFJvc29sZW4iLCJhZG1pbiI6IHRydWV9</h4>
@@ -1097,7 +1603,7 @@ HMACSHA256(encodedString, 'Xuplau');
                 </section>
 
                 <section>
-                    <h1>JWT</h4>
+                    <h1>JWT</h1>
                         <h4>eyJ0eXAiOiAiSldUIiwiYWxnIjogIkhTMjU2In0=</h4>
                         <h4>.</h4>
                         <h4>eyJpc3MiOiAiaXZhbnJvc29sZW4uY29tIiwiZXhwIjogMTMwMDgxOTM4MCwibmFtZSI6ICJJdmFuIFJvc29sZW4iLCJhZG1pbiI6IHRydWV9</h4>
@@ -1338,6 +1844,611 @@ return false;
                     <?php endif; ?>
                 </section>
 
+                <!-- PALESTRA AUTOMAÇÃO RESIDENCIAL - DIEGO PIRES//-->
+                <section class="">
+                    <h1>Automação Residencial com PHP</h1>
+                    <p>Utilizando Arduino e PHP para automatizar a sua residência</p>
+                </section>
+
+                <section class="">
+                    <h1>O que veremos?</h1>
+                    <ol>
+                        <li data-fragment-index="0" class="fragment visible">O que é Arduino?</li>
+                        <li data-fragment-index="1" class="fragment visible">Aplicações para o Arduino</li>
+                        <li data-fragment-index="2" class="fragment visible">Como trabalhar com o Arduino?</li>
+                        <li data-fragment-index="3" class="fragment visible">Como integrar com PHP?</li>
+                        <li data-fragment-index="4" class="fragment visible">Juntando tudo</li>
+                    </ol>
+                </section>
+
+                <section class="">
+                    <h1>Diego Pires</h1>
+                    <ul>
+                        <li>15 anos trabalhando com Web</li>
+                        <li>Gamer</li>
+                        <li>Geek</li>
+                        <li>Atualmente Gestor de TI</li>
+                    </ul>
+                </section>
+
+                <section class="poll" data-number="arduino-1">
+                    <p>Enquete</p>
+                    <p>Você já "brincou" ou conhece Arduino?</p>
+
+                    <div class="button-level" data-value="sim">
+                        <span>Sim (<b>0</b>)</span>
+                        <div class="level green"></div>
+                    </div>
+
+                    <div class="button-level" data-value="não">
+                        <span>Não (<b>0</b>)</span>
+                        <div class="level red"></div>
+                    </div>
+                </section>
+
+                <section>
+                    <section class="">
+                        <h1>O que é Arduino?</h1>
+                        <blockquote>
+                            Arduino é uma plataforma aberta de prototipação eletrônica
+                        </blockquote>
+                        <aside class="notes">
+                            <p>Por ser uma plataforma, ele não é simplesmente um hardware como muitos pensam. A plataforma Arduino é composta por hardware (placa controladora) e software (ambiente de desenvolvimento), ambos muito flexíveis, fáceis de usar e super acessíveis. Ele é uma das principais realizações de um movimento que só cresce no mundo: o movimento makers. São os fazedores. Representantes de uma cultura que uniu o faça-você-mesmo à tecnologia para criar projetos incríveis em todas as áras.</p>
+                            <p>O projeto nasceu em 2005 quando estudantes de um curso de Design de Interação na Itália, entre eles Massimo Banzi, resolveram arregaçar as mangas e criar eles mesmos uma alternativa ao hardware do curso, que era caro e complexo para os estudantes.</p>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Como assim, Plataforma de Prototipação Eletrônica?</h2>
+                        <blockquote data-fragment-index="0" class="fragment visible">
+                            Não é apenas o Hardware. É o conjunto composto por Hardware e Software.
+                        </blockquote>
+                        <aside class="notes">
+                            <p>Por ser uma plataforma, ele não é simplesmente um hardware como muitos pensam. A plataforma Arduino é composta por hardware (placa controladora) e software (ambiente de desenvolvimento), ambos muito flexíveis, fáceis de usar e super acessíveis. Ele é uma das principais realizações de um movimento que só cresce no mundo: o movimento makers. São os fazedores. Representantes de uma cultura que uniu o faça-você-mesmo à tecnologia para criar projetos incríveis em todas as áras.</p>
+                            <p>O projeto nasceu em 2005 quando estudantes de um curso de Design de Interação na Itália, entre eles Massimo Banzi, resolveram arregaçar as mangas e criar eles mesmos uma alternativa ao hardware do curso, que era caro e complexo para os estudantes.</p>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>História</h2>
+                        <ul>
+                            <li data-fragment-index="0" class="fragment visible">
+                                Nasceu em 2005, na Itália. Uma alternativa ao hardware do curso de Design e Interação que alguns alunos cursavam.
+                            </li>
+                            <li data-fragment-index="1" class="fragment visible">
+                                Desde então o "movimento makers (fazedores)" tem crescido cada vez mais.
+                            </li>
+                        </ul>
+                        <aside class="notes">
+                            <p>O projeto nasceu em 2005 quando estudantes de um curso de Design de Interação na Itália, entre eles Massimo Banzi, resolveram arregaçar as mangas e criar eles mesmos uma alternativa ao hardware do curso, que era caro e complexo para os estudantes.</p>
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section class="">
+                        <h1>E como, afinal, funciona?</h1>
+                        <blockquote data-fragment-index="0" class="fragment visible">
+                            Basicamente? entrada, processamento e saída (como toda linguagem de programação).
+                        </blockquote>
+                    </section>
+
+                    <section data-background="images/Arduino-Explain.jpg">
+                        <aside class="notes">
+                            <p>Dessa forma podemos efetuar a leitura e escrita nos pinos digitais e analógicos que o Arduino possui.</p>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Entrada digital e analógica? Como assim?</h2>
+                        <ul>
+                            <li data-fragment-index="0" class="fragment visible">Digital<p>Lê e escreve somente dois estados. LOW e HIGH.</p></li>
+                            <li data-fragment-index="1" class="fragment visible">Analógica<p>Lê uma infinidade de valores em relação ao tempo.</p></li>
+                        </ul>
+                        <aside class="notes">
+                            <p>Em muitas situações a variação das  grandezas envolvidas acontece de forma analógica. Ou seja, variam continuamente em relação ao tempo e podem assumir infinitos valores dentro de uma faixa. Como exemplo a temperatura, pressão e umidade são grandezas que variam dessa forma.
+                            O microcontrolador da Arduino trabalha internamente com dados digitais, portanto é necessário traduzir um sinal analógico para um valor digital. A técnica utilizada para leitura de um sinal analógico pelo Arduino é a conversão analógica digital.</p>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Variações do Arduino</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th>Uno</th>
+                                    <th>Mega 2560</th>
+                                    <th>Leonardo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Flash (KB)</td>
+                                    <td>32</td>
+                                    <td>256</td>
+                                    <td>32</td>
+                                </tr>
+                                <tr>
+                                    <td>CPU</td>
+                                    <td>16 MHz</td>
+                                    <td>16 MHz</td>
+                                    <td>16 MHz</td>
+                                </tr>
+                                <tr>
+                                    <td>Analog IN/OUT</td>
+                                    <td>6/0</td>
+                                    <td>16/0</td>
+                                    <td>12/0</td>
+                                </tr>
+                                <tr>
+                                    <td>Digital IO/PWN</td>
+                                    <td>14/6</td>
+                                    <td>54/15</td>
+                                    <td>20/7</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <blockquote style="font-size: 28px;">ArduinoBT, Due, Esplora, Ethernet, Fio, Gemma, Leonardo, LilyPad, LilyPad SimpleSnap, Mega 2560, Mega ADK, Micro, Mini, Nano, Pro, Pro Mini, Uno, Yùn, Zero</blockquote>
+                    </section>
+                </section>
+
+                <section class="">
+                    <h1>Aplicações do Arduino</h1>
+                    <p>
+                        <span data-fragment-index="0" class="fragment visible">Projetos Musicais</span>
+                        <span data-fragment-index="1" class="fragment visible">, Projetos Científicos</span>
+                        <span data-fragment-index="2" class="fragment visible">, Automação Residencial</span>
+                        <span data-fragment-index="3" class="fragment visible">, Automação de Processos</span>
+                        <span data-fragment-index="4" class="fragment visible">, Automação Industrial, etc</span>
+                    </p>
+                </section>
+
+                <section>
+                    <section class="">
+                        <h1>Como programar?</h1>
+                        <ul>
+                            <li data-fragment-index="0" class="fragment visible">IDE (Arduino)</li>
+                            <li data-fragment-index="1" class="fragment visible">Linguagem Própria</li>
+                        </ul>
+
+                        <aside class="notes">
+                            <p>Utiliza uma IDE, uma linguagem baseada em Wiring que é quase um C/C++.</p>
+                            <p>Transfere via cabo USB para o Arduino.</p>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h1>Resumindo</h1>
+                        <h3>O que preciso</h3>
+                        <ul>
+                            <li data-fragment-index="0" class="fragment visible">Placa</li>
+                            <li data-fragment-index="1" class="fragment visible">Computador</li>
+                            <li data-fragment-index="2" class="fragment visible">Cabo USB</li>
+                            <li data-fragment-index="3" style="color: #FF2C2D;" class="fragment visible red">Shield Ethernet / Wifi</li>
+                            <li data-fragment-index="4" style="color: #FF2C2D;" class="fragment visible red">Relê(s)</li>
+                            <li data-fragment-index="4" style="color: #FF2C2D;" class="fragment visible red">Componentes eletrônicos diversos</li>
+                        </ul>
+
+                    </section>
+
+                </section>
+
+                <!-- <section>
+                    <section class="">
+                        <h1>E isso tudo, é caro?</h1>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Arduino Uno</th>
+                                    <th>Shield Ethernet</th>
+                                    <th>Wifi</th>
+                                    <th>Relê</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Flash (KB)</td>
+                                    <td>32</td>
+                                    <td>256</td>
+                                    <td>32</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>     -->
+
+
+                <section>
+                    <section class="">
+                        <h1>E onde entra o PHP?</h1>
+                        <p>Iremos usar o PHP como um "meio de campo"</p>
+                        <p>O PHP intermediará as interações entre a interface WEB e o Arduino</p>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h1>WebSocket</h1>
+                        <p>É através do Ratchet que iremos "comandar" o Arduino, enviando e recebendo informações.</p>
+
+
+                    </section>
+
+                    <section data-background="#ffffff">
+                        <img src="images/diagrama-server-client.png" />
+                    </section>
+
+                </section>
+
+                <section>
+                    <section class="">
+                        <h1>Preparando o servidor</h1>
+
+                            <pre><code class="hljs javascript" data-trim>
+                            composer require cboden/ratchet
+                            </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                    <h3>Ajustando o composer.json</h3>
+                        <pre><code class="hljs javascript" data-trim>
+{
+    "autoload": {
+        "psr-0": {
+            "ServerLocaweb": "src"
+        }
+    },
+    "require": {
+        "cboden/ratchet": "^0.3.4"
+    }
+}
+                        </code></pre>
+
+
+                    </section>
+                </section>
+
+                <section>
+                    <section class="">
+                        <h1>Programando o Servidor</h1>
+
+                        Primeiro vamos criar a classe que será responsável por gerenciar as conexões.<br />
+                        Então, de acordo com o composer.json devemos criar a seguinte estrutura de diretórios.
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <pre><code class="hljs javascript" data-trim>
+/
+/bin
+  |
+   -- Onde ficará o "executável" do WebSocket
+/src
+    /ServerLocaweb
+/vendor
+  |
+   -- Criado automaticamente pelo composer
+                        </code></pre>
+
+                    </section>
+
+                    <section class="">
+                        <h3>WebSocketServer.php</h3>
+                        Deve conter o "padrão" para WebSockets, iniciando da seguinte forma
+                        <pre>
+                            <code class="hljs php" data-trim>
+&lt;?php
+namespace ServerLocaweb;
+use Ratchet\MessageComponentInterface;
+use Ratchet\ConnectionInterface;
+
+class WebSocketServer implements MessageComponentInterface {
+                            </code>
+                        </pre>
+                    </section>
+
+
+                    <section>
+                        <pre>
+                            <code class="hljs php" data-trim>
+protected $clients;
+
+public function __construct() {
+    $this->clients = new \SplObjectStorage;
+    echo "Servidor Webocket no ar". PHP_EOL;
+}
+
+public function onOpen(ConnectionInterface $conn)
+{
+    $this->clients->attach($conn);
+
+    echo "Conexão estabelecida\n";
+}
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code class="hljs php" data-trim>
+
+public function onClose(ConnectionInterface $conn)
+{
+    $this->clients->detach($conn);
+
+    echo "Conexão {$conn->resourceId} foi desconectada".PHP_EOL;
+}
+
+public function onError(ConnectionInterface $conn, \Exception $e)
+{
+    echo "Ocorreu um erro: {$e->getMessage()}".PHP_EOL;
+
+    $conn->close();
+}
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code class="hlphp hlphp php" data-trim>
+public function onMessage(ConnectionInterface $from, $msg)
+{
+    $totalConexoes = count($this->clients) - 1;
+    echo sprintf('Conexão %d enviando mensagem "%s" para %d conex%s' . PHP_EOL
+        , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? 'ão' : 'ões');
+
+    foreach ($this->clients as $client) {
+        if ($from !== $client) {
+            $client->send($msg);
+        }
+    }
+}
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <pre><code>
+&lt;?php
+use Ratchet\Server\IoServer;
+use Ratchet\Http\HttpServer;
+use Ratchet\WebSocket\WsServer;
+use ServerLocaweb\WebSocketServer;
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+echo 'Iniciando servidor...' . PHP_EOL;
+$server = IoServer::factory(
+    new HttpServer(
+        new WsServer(
+            new WebSocketServer()
+        )
+    ),
+    8081
+);
+
+$server->run();
+                        </code></pre>
+                    </section>
+
+
+                </section>
+
+                <section>
+                    <section class="">
+                        <h1>Programando o client HTML</h1>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code class="hlhtml hlhtml html" data-trim>
+&lt;script src="js/jquery.min.js">&lt;/script>
+                            </code>
+                        </pre>
+
+                        <pre>
+                            <code class="hlhtml hlhtml html" data-trim>
+&lt;h2>Cor Atual &lt;span id="corAtual">&lt;/span>&lt;/h2>
+&lt;button class="button-arduino" data-value="amarelo">Amarelo&lt;/button>
+&lt;button class="button-arduino" data-value="verde">Verde&lt;/button>
+&lt;button class="button-arduino" data-value="azul">Azul&lt;/button>
+&lt;button class="button-arduino" data-value="vermelho">Vermelho&lt;/button>
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code class="hljs hljs js" data-trim>
+var conn = new WebSocket('ws://localhost:8081');
+conn.onopen = function(e) {
+    console.log("Websocket Server Arduino OK!");
+};
+
+conn.onmessage = function(e) {
+
+    data = JSON.parse(e.data);
+    if (data.type == 'arduino') {
+        $("#corAtual").html(data.command);
+
+    }
+};
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre>
+                            <code class="hljs hljs js" data-trim>
+$(".button-arduino").on('tap click', function(e) {
+    e.preventDefault();
+    $("#corAtual").html($(this).attr('data-value'));
+    objEnviar = {};
+    objEnviar.command = $(this).attr('data-value');
+    objEnviar.type = 'arduino';
+    conn.send(JSON.stringify(objEnviar));
+});
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+
+
+
+                <section>
+                    <section class="">
+                        <h1>Programando o Arduino</h1>
+                        <p>Iremos precisar de algumas bibliotecas adicionais para o Arduino</p>
+                        <p>WebSockets</p>
+                        <p>ArduinoJson</p>
+                    </section>
+
+                    <section>
+                        <h1>O básico</h1>
+                        <pre><code>
+void setup () {
+    ...
+}
+
+void loop() {
+    ...
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h1>Projeto Final</h1>
+                        <pre><code>
+#include &lt;Arduino.h>
+#include &lt;SPI.h>
+#include &lt;Ethernet.h>
+#include &lt;WebSocketsClient.h>
+#include &lt;stdio.h>
+#include &lt;ArduinoJson.h>
+
+#define RED       5
+#define GREEN    6
+#define BLUE     7
+long rgb[3];
+long bright[3] = { 107, 67, 256};
+long k;
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <pre><code>
+String strJson;
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+IPAddress ip(192, 168, 1, 43);
+WebSocketsClient webSocket;
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <pre><code>
+void setup () {
+  Serial.begin(115200);
+  for (k=0; k<3; k++) {
+    pinMode(RED + k, OUTPUT);
+  }
+
+  Ethernet.begin(mac, ip);
+  delay(3000);
+  webSocket.begin("192.168.1.33", 8081);
+  webSocket.onEvent(webSocketEvent);
+}
+
+void loop() {
+  webSocket.loop();
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <pre><code>
+void webSocketEvent(WStype_t type, uint8_t * payload, size_t length) {
+    StaticJsonBuffer<200> jsonBuffer;
+    strJson = String((char *)payload);
+    JsonObject& root = jsonBuffer.parseObject(strJson);
+    const char* command = root["command"];
+    const char* typeMens = root["type"];
+
+    ...
+
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <pre><code>
+switch(type) {
+  case WStype_DISCONNECTED:
+      Serial.println("[WSc] Disconnected!\n");
+      delay(5000);
+      webSocket.begin("192.168.1.33", 8081);
+      break;
+  case WStype_CONNECTED:
+      break;
+  case WStype_TEXT:
+      if(String("arduino").equals(typeMens)) {
+        if(String("verde").equals(command)) {
+          analogWrite(RED,0.01);
+          analogWrite(GREEN,255* bright[2]/256);
+          analogWrite(BLUE,0.01);
+        } else if(String("azul").equals(command)) {
+          analogWrite(RED,0.01);
+          analogWrite(GREEN,0.01);
+          analogWrite(BLUE,255* bright[2]/256);
+        } else if(String("vermelho").equals(command)) {
+          analogWrite(RED,255* bright[2]/256);
+          analogWrite(GREEN,0.01);
+          analogWrite(BLUE,0.01);
+        } else if(String("amarelo").equals(command)) {
+          analogWrite(RED,255* bright[2]/256);
+          analogWrite(GREEN,120 * bright[2]/256);
+          analogWrite(BLUE,0.01);
+        }
+      }
+      break;
+}
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <h1>Protoboard</h1>
+                    <img src="images/rgb-led-strips-mosfets.png" />
+                </section>
+                <section>
+                    <h1>Resultado Final</h1>
+                    <h2>Cor Atual <span id="corAtual"></span></h2>
+                    <button class="button-arduino amarelo" data-value="amarelo">Amarelo</button>
+                    <button class="button-arduino verde" data-value="verde">Verde</button>
+                    <button class="button-arduino azul" data-value="azul">Azul</button>
+                    <button class="button-arduino vermelho" data-value="vermelho">Vermelho</button>
+
+                </section>
+
+                <section>
+                    <h1>Dúvidas?</h1>
+                </section>
+
+                <section>
+                    <h1>Obrigado</h1>
+                    Avalie <a href="https://legacy.joind.in/16678">https://legacy.joind.in/16678</a><br />
+                    <a href="https://github.com/diegocpires/WebsocketLocaweb">https://github.com/diegocpires/WebsocketLocaweb</a><br />
+                    <a href="https://github.com/diegocpires/ArduinoLocaweb">https://github.com/diegocpires/ArduinoLocaweb</a><br />
+
+                </section>
+
                 <!-- Sorteio -->
                 <section class="raffle" data-number="pannel" data-change="true">
                     <h2 class="winner-message"></h2>
@@ -1352,6 +2463,7 @@ return false;
                     <?php endif; ?>
                 </section>
 
+
 			</div>
 
 		</div>
@@ -1359,7 +2471,7 @@ return false;
 		<script src="js/plugins/jquery.min.js"></script>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/plugins/reveal.js"></script>
-    <script src="js/plugins/soundjs-0.6.0.combined.js"></script>
+        <script src="js/plugins/soundjs-0.6.0.combined.js"></script>
 
 		<script>
             var mode = $('body').attr('data-mode');
@@ -1370,12 +2482,12 @@ return false;
                 progress: true,
                 history: false,
                 keyboard: false,
-                overview: false,
+                overview: true,
                 touch: false,
                 center: true,
                 autoSlideStoppable: false,
                 help: false,
-
+                slideNumber: false,
                 transition: 'slide', // none/fade/slide/convex/concave/zoom
 
                 // Optional reveal.js plugins
@@ -1386,7 +2498,7 @@ return false;
                     { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
                     { src: 'plugin/multiplex-ratchet/ratchet.js', async: true },
                     { src: 'js/code.min.js', async: true },
-                    //{ src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true }
                     //{ src: 'plugin/notes/notes.js', async: true }
                 ],
 
@@ -1402,13 +2514,14 @@ return false;
                 revealConfig.keyboard = true;
                 revealConfig.touch = true;
                 revealConfig.dependencies.push({ src: 'plugin/multiplex-ratchet/master.js', async: true });
+                revealConfig.dependencies.push({ src: 'plugin/notes/notes.js', async: true });
             } else {
                 revealConfig.dependencies.push({ src: 'plugin/multiplex-ratchet/client.js', async: true });
             }
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize(revealConfig);
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize(revealConfig);
 		</script>
     <script src="js/plugins/NoSleep.min.js"></script>
 

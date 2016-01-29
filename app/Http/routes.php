@@ -31,11 +31,16 @@ $app->get('/', function() use ($app) {
     $hostExplode = explode(':', $host);
     $host = $hostExplode[0];
 
+    $websocketsAddress = 'node79991-seminariophpsp.jelasticlw.com.br:11006?session=' . $md5;
+
+    if (strpos($host, 'jelasticlw') === false) {
+        $websocketsAddress = $host . ':7888?session=' . $md5;
+    }
+
     $data = [
         'host' => $_SERVER['HTTP_HOST'],
         'mode' => $mode,
-        //'websocketsAddress' => $host . ':7888?session=' . $md5
-        'websocketsAddress' => 'node79991-seminariophpsp.jelasticlw.com.br:11006?session=' . $md5
+        'websocketsAddress' => $websocketsAddress
     ];
 
     return view('home', $data);

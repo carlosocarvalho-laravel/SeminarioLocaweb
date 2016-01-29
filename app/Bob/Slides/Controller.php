@@ -1,6 +1,7 @@
 <?php
 namespace App\Bob\Slides;
 
+use App\Bob\Slides\Messages\ArduinoMessage;
 use App\Bob\Slides\Messages\CounterMessage;
 use App\Bob\Slides\Messages\MessageManager;
 use App\Bob\Slides\Messages\RaffleMessage;
@@ -165,6 +166,11 @@ class Controller implements MessageComponentInterface
         } else if ( $message instanceof PingMessage) {
             Log::d('Send back');
             Sender::send($message, $connection);
+        } else if ( $message instanceof ArduinoMessage) {
+            Log::d('Arduino Message');
+            foreach (self::$connections as $anotherConnection) {
+                Sender::send($message, $anotherConnection);
+            }
         } else if (!$message instanceof RaffleResultMessage) {
             Log::d('Broadcast to others');
             //Broadcast para todos, menos para quem enviou
