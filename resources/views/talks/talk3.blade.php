@@ -719,7 +719,7 @@ $runar->start()
               O que segue é uma visualização guiada por eventos.
             </p>
           </section>
-          <section data-background-size="40%" data-background="images/creating-player/modelo-pubsub.png"></section>
+          <section data-background-size="50%" data-background="images/creating-player/modelo-pubsub.png"></section>
           <section>
             <h2>
               No momento zero da aplicação temos três <strong>subscribers</strong> escutando
@@ -738,11 +738,11 @@ $runar->start()
               </ul>
             </p>
           </section>
-          <section data-background="images/creating-player/event-driven/01.png" data-background-size="40%"></section>
-          <section data-background="images/creating-player/event-driven/02.png" data-background-size="40%"></section>
-          <section data-background="images/creating-player/event-driven/03.png" data-background-size="40%"></section>
-          <section data-background="images/creating-player/event-driven/04.png" data-background-size="40%"></section>
-          <section data-background="images/creating-player/event-driven/05.png" data-background-size="40%"></section>
+          <section data-background="images/creating-player/event-driven/01.png" data-background-size="50%"></section>
+          <section data-background="images/creating-player/event-driven/02.png" data-background-size="50%"></section>
+          <section data-background="images/creating-player/event-driven/03.png" data-background-size="50%"></section>
+          <section data-background="images/creating-player/event-driven/04.png" data-background-size="50%"></section>
+          <section data-background="images/creating-player/event-driven/05.png" data-background-size="50%"></section>
         </section>
         <section data-background="images/duvidas-lego.gif">
           <h2>
