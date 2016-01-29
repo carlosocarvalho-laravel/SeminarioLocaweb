@@ -1,0 +1,24 @@
+.functional-poll .poll-title {
+    color: #8891c0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.8em;
+    font-weight: 900;
+    margin-top: 1.0em;
+    margin-bottom: 0.25em;
+    text-shadow: none;
+    text-transform: none;
+}
+
+.functional-poll .poll-question {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 1.0em;
+    text-transform: none;
+}
+
+.functional-poll .poll-question code {
+    color: #999;
+    font-size: 0.95em;
+}
