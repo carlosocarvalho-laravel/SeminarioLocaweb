@@ -44,28 +44,39 @@
                 <!-- Author: Marcel Gonçalves dos Santos -->
                 @include('talks.talk1')
 
+				@include('talks.intro')
+
                 <!-- Title: Arquitetura Orientada a Eventos -->
                 <!-- Author: Edson José de Lima Junior -->
                 @include('talks.talk2')
+
+				@include('talks.intro')
 
                 <!-- Title: React além dos WebSockets -->
                 <!-- Author: Níckolas Daniel da Silva -->
                 @include('talks.talk3')
 
+				@include('talks.intro')
+
                 <!-- Title: Autenticação com Json Web Token (JWT) -->
                 <!-- Author: Ivan Rosolen -->
                 @include('talks.talk4')
+
+				@include('talks.intro')
 
                 <!-- Title: PSR-7 e os Middlewares -->
                 <!-- Author: Daniel Ferreira Gimenes -->
                 @include('talks.talk5')
 
+				@include('talks.intro')
                 @include('talks.panel')
+				@include('talks.intro')
 
                 <!-- Title: Automatizando casas com PHP -->
                 <!-- Author: Diego Pires -->
                 @include('talks.talk6')
 
+				@include('talks.intro')
                 @include('talks.draw')
 
 			</div>
@@ -85,6 +96,5 @@
 
         <!-- Other -->
         @include('partials.other')
-
 	</body>
 </html>
