@@ -100,6 +100,76 @@
                     <h4><a href="https://github.com/PHPSP/docs/blob/master/codigo-de-conduta.md">Código de Conduta</a></h4>
                 </section>
 
+                <!-- Slides EDA -->
+                <!-- Edson José de Lima Junior-->
+                <section>
+                    <h1>EDA</h1>
+                    <h3>Um paralelo entre desenvolvimento de software e a extinção dos mamutes</h3>
+                    <h4>@edsonlimadev</h4>
+                </section>
+
+                <section>
+                    <h1>Edson José de Lima Junior</h1>
+                    <ul>
+                        <li>
+                            Um desenvolvedor web apaixonado por música e café.
+                            <span>Como eu me descrevo.</span>
+                        </li>
+                        <li>
+                            Aquele gordinho da barba ruiva e cabelos brancos.
+                            <span>Como me descrevem.</span>
+                        </li>
+                        <li>
+                            Um garoto que ficaria bem mais bonito sem aquela barba.
+                            <span>Como minha mãe me descreve.</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <img src="images/eda/momento-jaba.jpg" />
+                </section>
+
+                <section>
+                    <h1>Natue</h1>
+                    <ul>
+                        <li>Maior e-commerce de produtos naturais e bem estar brasileiro.</li>
+                        <li>Entrega para todo o país.</li>
+                        <li>Acompanhe nosso Blog.</li>
+                        <li>Siga-nos nas redes sociais.</li>
+                        <li>Estamos contratando.</li>
+
+                        <li>Use o voucher <strong>EDSON10</strong> e ganhe de
+                            10% de desconto em qualquer produto do site...
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Alinhando expectativas</h1>
+                    <ul>
+                        <li>Não espere por código nessa palestra U.U</li>
+                        <li>Não espere que essa arquitetura resolva todos os seus problemas.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Você lembra dos Mamutes?</h1>
+
+                    <img src="images/eda/mamute.png" />
+                </section>
+
+                <section>
+                    <h1>Surgem alterações climáticas</h1>
+
+                    <img src="images/eda/clima.jpg" />
+                </section>
+
+                <section>
+                    <h1>Era uma vez nosso amiguinho U.U</h1>
+
+                    <img src="images/eda/mamute-extinto.png" />
+                </section>
 
                 <!-- React Além dos Websockets -->
                 <!-- Nickolas "Nawarian" -->
