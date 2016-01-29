@@ -34,17 +34,17 @@
             function toggleFullScreen() {
               var noSleep = new NoSleep();
               noSleep.enable();
-              if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-               (!document.mozFullScrgit pull https://github.com/nawarian/SeminarioLocaweb.git mastereen && !document.webkitIsFullScreen)) {
-                if (document.documentElement.requestFullScreen) {
-                  document.documentElement.requestFullScreen();
-                } else if (document.documentElement.mozRequestFullScreen) {
-                  document.documentElement.mozRequestFullScreen();
-                } else if (document.documentElement.webkitRequestFullScreen) {
-                  document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-                }
-              } else {
-                if (document.cancelFullScreen) {
+                if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+                    (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+                    if (document.documentElement.requestFullScreen) {
+                        document.documentElement.requestFullScreen();
+                    } else if (document.documentElement.mozRequestFullScreen) {
+                        document.documentElement.mozRequestFullScreen();
+                    } else if (document.documentElement.webkitRequestFullScreen) {
+                        document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+                    }
+                } else {
+                    if (document.cancelFullScreen) {
                   document.cancelFullScreen();
                 } else if (document.mozCancelFullScreen) {
                   document.mozCancelFullScreen();
@@ -838,7 +838,7 @@ $runar->start()
 
                     <div class="button-level" data-value="sim">
                         <span>Sim (<b>0</b>)</span>
-                        <div clgass="level green"></div>
+                        <div class="level green"></div>
                     </div>
 
                     <div class="button-level" data-value="não">
