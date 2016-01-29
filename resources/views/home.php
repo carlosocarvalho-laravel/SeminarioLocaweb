@@ -760,7 +760,7 @@
                 </section>
 
                 <section>
-                    <h3>Distribuir ou não distribuir? Heis a questão.</h3>
+                    <h3>Distribuir ou não distribuir? Eis a questão.</h3>
 
                     <img src="images/eda/to-be-or-not-to-be.jpg" />
                 </section>
