@@ -31,9 +31,9 @@ $app->get('/', function() use ($app) {
     $hostExplode = explode(':', $host);
     $host = $hostExplode[0];
 
-    if(strpos($host, 'jelasticlw') !== false ){
-        $websocketsAddress = 'node79991-seminariophpsp.jelasticlw.com.br:11006?session=' . $md5;
-    }else{
+    $websocketsAddress = 'node79991-seminariophpsp.jelasticlw.com.br:11006?session=' . $md5;
+
+    if (gethostname() == 'seminario-php') {
         $websocketsAddress = $host . ':7888?session=' . $md5;
     }
 
