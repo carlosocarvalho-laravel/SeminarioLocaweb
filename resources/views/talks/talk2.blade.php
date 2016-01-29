@@ -190,3 +190,11 @@
 
     <img src="images/eda/confused.gif" />
 </section>
+
+<section>
+    <h3>Clique no gatinho e deixe-me seu feedback</h3>
+    
+    <a href="https://joind.in/talk/09669" target="_blank">
+        <img src="images/eda/feedback-cat.jpg"/>
+    </a>
+</section>
