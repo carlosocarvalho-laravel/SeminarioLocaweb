@@ -4,7 +4,7 @@
 
   var revealConfig = {
       controls: false,
-      progress: true,
+      progress: false,
       history: false,
       keyboard: false,
       overview: true,
