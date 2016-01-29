@@ -103,8 +103,6 @@
                     <h4><a href="https://github.com/PHPSP/docs/blob/master/codigo-de-conduta.md">Código de Conduta</a></h4>
                 </section>
 
-<<<<<<< HEAD
-=======
                 <!-- Programação Funcional em PHP -->
                 <!-- Marcel Gonçalves dos Santos -->
 
@@ -765,7 +763,47 @@
                 </section>
 
                 <section>
-                    <img src="images/eda/broker.png">
+                    <img src="images/eda/broker.png" />
+                </section>
+
+                <section>
+                    <h1>Distribuir ou não distribuir? Heis a questão.</h1>
+
+                    <img src="images/eda/to-be-or-not-to-be.jpg" />
+                </section>
+
+                <section>
+                    <h1>Calma amiguinho nem tudo são flores</h1>
+
+                    <aside style="float: left;">
+                        <img src="images/eda/dollynho.jpg" />
+                    </aside>
+                    <ul style="float: right; width: 15em;">
+                        <li>Desenvolvimento mais complexo</li>
+                        <li>Testar tende a ser mais complicado</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>
+                        <a href="http://www.infoq.com/br/presentations/nao-fique-preso-a-uma-arquitetura" target="_blank">
+                            Rafael Mueller <br>
+                            Não fique preso a uma arquitetura
+                        </a>
+                    </p>
+                    <br />
+                    <p>
+                        <a href="http://www.oreilly.com/programming/free/software-architecture-patterns.csp?intcmp=il-prog-free-article-sa15_sa_patterns" target="_blank">
+                            Mark Richards <br>
+                            Software architecture patterns
+                        </a>
+                    </p>
+                </section>
+
+                <section>
+                    <h1>Dúvidas?</h1>
+
+                    <img src="images/eda/confused.gif" />
                 </section>
 
                 <!-- React Além dos Websockets -->
