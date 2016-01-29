@@ -1,0 +1,29 @@
+nginx:
+  image: nginx:latest
+  command: "nginx -g 'daemon off;'"
+  links:
+    - php
+  ports:
+    - "80:80"
+  volumes:
+    - ./:/var/www
+    - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+  working_dir: /var/www
+php:
+  image: php:5.6-fpm
+  command: "/data/php-fpm.sh"
+  ports:
+    - "9000:9000"
+  volumes:
+    - ./:/var/www
+    - ./docker/php:/data
+  working_dir: /var/www
+php-websocket:
+  image: php:5.6-fpm
+  command: "php artisan slides:server"
+  ports:
+    - "7888:7888"
+  volumes:
+    - ./:/var/www
+  working_dir: /var/www
