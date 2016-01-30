@@ -21,3 +21,54 @@
 .button-level.small-poll span b {
     display: none;
 }
+
+.logos {
+	margin: 0 auto!important;
+	margin-bottom: 40px!important;
+	width: 780px!important;
+}
+
+.logo-locaweb, .logo-phpsp {
+	border: 5px solid #777!important;
+	float: left!important; 
+	height: 120px!important;
+	margin:0!important;
+	padding:0!important;
+}
+
+.logo-locaweb {
+	margin-right: 40px!important;
+}
+
+.custom-links {
+	margin-top: 2em!important;
+}
+
+.reveal a.custom-link {
+	color: #fff;
+	font-family: 'League Gothic', Impact, sans-serif;
+    font-weight: normal;
+    font-size: 1.4em;
+    line-height: 1.2;
+    letter-spacing: normal;
+    margin: 0 25px;
+    text-transform: uppercase;
+}
+
+.reveal a.custom-link:hover {
+	color: #ccc;
+}
+
+.wifi {
+	color: #fff;
+	font-family: 'League Gothic', Impact, sans-serif;
+    font-weight: normal;
+    font-size: 1.4em;
+    line-height: 1.2;
+    letter-spacing: normal;
+    margin: 0 25px;
+}
+
+.reveal .wifi strong {
+    text-transform: uppercase;
+}
