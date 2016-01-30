@@ -1,5 +1,5 @@
 <!-- PALESTRA AUTOMAÇÃO RESIDENCIAL - DIEGO PIRES//-->
-                <section class="">
+                <section class="" id="inicio-diegopires">
                     <h1>Automação Residencial com PHP</h1>
                     <p>Utilizando Arduino e PHP para automatizar a sua residência</p>
                 </section>
@@ -22,12 +22,36 @@
                         <li>Gamer</li>
                         <li>Geek</li>
                         <li>Atualmente Gestor de TI</li>
-                    </ul>
+                        <li><a href="mailto:diegopires@php.net">diegopires@php.net</a></li>
+                        <li><a href="https://github.com/diegocpires">https://github.com/diegocpires</a></li>
+                    </ul><br />
+                </section>
+
+                <section class="">
+                    <h3>Participe</h3>
+                    <h2>Contribua</h2>
+                    <h1>Evolua</h1>
+                    <a href="http://phpsp.org.br">phpsp.org.br</a>
                 </section>
 
                 <section class="poll" data-number="arduino-1">
                     <p>Enquete</p>
                     <p>Você já "brincou" ou conhece Arduino?</p>
+
+                    <div class="button-level" data-value="sim">
+                        <span>Sim (<b>0</b>)</span>
+                        <div class="level green"></div>
+                    </div>
+
+                    <div class="button-level" data-value="não">
+                        <span>Não (<b>0</b>)</span>
+                        <div class="level red"></div>
+                    </div>
+                </section>
+
+                <section class="poll" data-number="arduino-2">
+                    <p>Enquete</p>
+                    <p>Você tem conhecimentos em eletrônica?</p>
 
                     <div class="button-level" data-value="sim">
                         <span>Sim (<b>0</b>)</span>
@@ -96,7 +120,7 @@
                     <section>
                         <h2>Entrada digital e analógica? Como assim?</h2>
                         <ul>
-                            <li data-fragment-index="0" class="fragment visible">Digital<p>Lê e escreve somente dois estados. LOW e HIGH.</p></li>
+                            <li data-fragment-index="0" class="fragment visible">Digital<p>Lê e escreve somente dois estados. LOW e HIGH. (em tese)</p></li>
                             <li data-fragment-index="1" class="fragment visible">Analógica<p>Lê uma infinidade de valores em relação ao tempo.</p></li>
                         </ul>
                         <aside class="notes">
@@ -187,31 +211,6 @@
                     </section>
 
                 </section>
-
-                <!-- <section>
-                    <section class="">
-                        <h1>E isso tudo, é caro?</h1>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Arduino Uno</th>
-                                    <th>Shield Ethernet</th>
-                                    <th>Wifi</th>
-                                    <th>Relê</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Flash (KB)</td>
-                                    <td>32</td>
-                                    <td>256</td>
-                                    <td>32</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                </section>     -->
-
 
                 <section>
                     <section class="">

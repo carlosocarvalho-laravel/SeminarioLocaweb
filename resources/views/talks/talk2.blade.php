@@ -3,7 +3,7 @@
 <section>
     <h1>Event Driven Architecture</h1>
     <h3>Um paralelo entre desenvolvimento de software e a extinção dos mamutes</h3>
-    <h4>@edsonlimadev</h4>
+    <h4>@edsonlimadev ou @dddwebdeveloper</h4>
 </section>
 
 <section>
@@ -29,14 +29,12 @@
 <section>
     <h2>Natue</h2>
     <ul>
-        <li>Maior e-commerce de produtos naturais e bem estar brasileiro.</li>
+        <li>Maior e-commerce de produtos naturais e bem estar do Brasil.</li>
         <li>Entrega para todo o país.</li>
-        <li>Acompanhe nosso Blog.</li>
-        <li>Siga-nos nas redes sociais.</li>
         <li>Estamos contratando.</li>
 
-        <li>Use o voucher <strong>EDSON10</strong> e ganhe de
-            10% de desconto em qualquer produto do site...
+        <li>Use o voucher <strong style="font-size: 1.2em; background-color: rgb(78, 152, 139); color: #fff; padding: 0.2em;">EDSON10</strong> e ganhe de
+            10% de desconto em qualquer produto do site
         </li>
     </ul>
 </section>
@@ -52,6 +50,10 @@
     <h3>Você lembra dos Mamutes?</h3>
 
     <img src="images/eda/mamute.png" />
+</section>
+
+<section data-background="#fff">
+    <img src="images/eda/mamute-evo.gif" />
 </section>
 
 <section>
@@ -149,14 +151,32 @@
     <img src="images/eda/processor-b.jpg" />
 </section>
 
-<section>
-    <img src="images/eda/broker.png" />
+<section data-background="#fff">
+    <img src="images/eda/sistema-monolito.png" />
+</section>
+
+<section data-background="#fff">
+    <img src="images/eda/quebrando.png" />
+</section>
+
+<section data-background="#fff">
+    <img src="images/eda/quebrado.png" />
 </section>
 
 <section>
     <h3>Distribuir ou não distribuir? Eis a questão.</h3>
 
     <img src="images/eda/to-be-or-not-to-be.jpg" />
+</section>
+
+<section data-background="#fff">
+    <aside style="width: 50%; float: left">
+        <img src="images/eda/zf2.png"/>
+    </aside>
+
+    <aside style="width: 50%; float: left">
+        <img src="images/eda/symfony2.png"/>
+    </aside>
 </section>
 
 <section>
@@ -189,4 +209,9 @@
     <h1>Dúvidas?</h1>
 
     <img src="images/eda/confused.gif" />
+</section>
+
+<section>
+    <a href="https://joind.in/talk/09669" target="_blank">Deixe seu feedback</a><br />
+    <img src="images/eda/feedback-cat.jpg"/>
 </section>
