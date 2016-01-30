@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>React e Ratchet, async e websockets com PHP</title>
+		<title>5º Seminário Locaweb PHPSP</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
