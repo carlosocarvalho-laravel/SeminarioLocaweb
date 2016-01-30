@@ -32,7 +32,7 @@ $app->get('/', function() use ($app) {
     $hostExplode = explode(':', $host);
     $host = $hostExplode[0];
 
-    $websocketsAddress = 'node79991-seminariophpsp.jelasticlw.com.br:11006?session=' . $md5;
+    $websocketsAddress = 'node79991-seminario-phpsp.jelasticlw.com.br:11006?session=' . $md5;
 
     if (strpos($host, 'jelasticlw') === false) {
         $websocketsAddress = $host . ':7888?session=' . $md5;
@@ -49,7 +49,7 @@ $app->get('/', function() use ($app) {
 
 $app->post('/', function(Request $request) use ($app) {
     //O usuário é 'admin@admin.com.br' e a senha é 'phprules'?
-    if ('admin@admin.com.br' === $request->input('mail') && '27da247ac3132070bfe88338846955adf41955fc' === sha1($request->input('pass'))) {
+    if ('admin@admin.com.br' === $request->input('mail') && '4f71093ff7734f42da190f76eb62728bfbfb0984' === sha1($request->input('pass'))) {
         $md5 = md5(Session::getId());
 
         //Grava na sessão que o visitante é o apresentador

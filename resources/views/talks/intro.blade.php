@@ -1,5 +1,4 @@
 <section>
-	
 	<div class="logos">
 		<img class="logo-locaweb" src="images/logo-locaweb.png">
 		<img class="logo-phpsp" src="images/logo-phpsp.png">
@@ -9,7 +8,11 @@
 	<h2>5º Seminário Locaweb PHPSP</h2>
 
 	<p>
-		<a class="custom-link" style="text-transform: lowercase" href="http://seminariophpsp.jelasticlw.com.br/">http://seminariophpsp.jelasticlw.com.br/</a>
+		<?php if (strpos($host, 'jelasticlw') === false): ?>
+			<a class="custom-link" style="text-transform: lowercase" href="http://seminario.phpsp.org.br/">http://seminario.phpsp.org.br</a>
+		<?php else: ?>
+			<a class="custom-link" style="text-transform: lowercase" href="http://seminariophpsp.jelasticlw.com.br//">http://seminariophpsp.jelasticlw.com.br</a>
+		<?php endif; ?>
 	</p>
 
 	<p class="custom-links">
