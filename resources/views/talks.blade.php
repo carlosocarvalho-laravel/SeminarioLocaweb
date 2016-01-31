@@ -82,7 +82,11 @@
 			</div>
 		</div>
 
-        <img class="fullscreenimg" onclick="toggleFullScreen();" src="images/fullscreen.png" style="position: fixed; bottom: 1em; right: 1em; width:2 em; z-index: 9999999;">
+        <?php if ($mode == 'presenter') : ?>
+            <input type="button" class="goto" />
+        <?php endif; ?>
+
+        <img class="fullscreenimg" onclick="toggleFullScreen();" src="images/fullscreen.png" style="position: fixed; bottom: 1em; right: 1em; width:2em; z-index: 9999999;">
 
 		<script src="js/plugins/jquery.min.js"></script>
 		<script src="lib/js/head.min.js"></script>
@@ -96,5 +100,20 @@
 
         <!-- Other -->
         @include('partials.other')
+
+        <script>
+            // Gambiarra marota que espera o carregamento dos módulos
+            setTimeout(function () {
+                Modules.goto.register('sorteio', 335);
+                Modules.goto.register('painel', 226);
+
+                Modules.goto.register(['funcional', '@marcelgsantos'], 1);
+                Modules.goto.register(['eda', '@edsonlimadev'], 86);
+                Modules.goto.register(['react', '@nawarian'], 118);
+                Modules.goto.register(['jwt', '@ivanrosolen'], 134);
+                Modules.goto.register(['psr7', '@danizord'], 176);
+                Modules.goto.register(['automação', '@diegopires'], 228);
+            }, 300);
+        </script>
 	</body>
 </html>
