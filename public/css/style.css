@@ -294,6 +294,17 @@ div.jequiti-background {
 .nickname .message {
   font-size: 30px;
 }
+.goto {
+    position: fixed;
+    height: 2em;
+    bottom: 4.6em;
+    right: 4.5em;
+    width:2em;
+    z-index: 9999999;
+    background: #59AFB6;
+    border: none;
+    border-radius: 10em;
+}
 
 /******************** Ids ********************/
 /******************** Media Queries ********************/
