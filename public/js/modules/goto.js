@@ -1,5 +1,6 @@
 Modules.goto = {
     targets : {},
+
     start: function () {
         $('.goto').on('click', function () {
             target = prompt('Para onde vamos maninho?');
