@@ -2,10 +2,11 @@ Modules.sound = {
 	start: function() {
 		 createjs.Sound.alternateExtensions = ['mp3'];
 		 createjs.Sound.registerSound('sounds/horn.ogg', 'horn');
-		 createjs.Sound.registerSound('sounds/comecar.ogg', 'comecar');
-		 createjs.Sound.registerSound('sounds/qualresposta.ogg', 'qualresposta');
-		 createjs.Sound.registerSound('sounds/suspense02.ogg', 'suspense02');
-		 createjs.Sound.registerSound('sounds/tchau.ogg', 'tchau');
+        createjs.Sound.registerSound('sounds/comecar.ogg', 'comecar');
+        createjs.Sound.registerSound('sounds/qualresposta.ogg', 'qualresposta');
+        createjs.Sound.registerSound('sounds/suspense02.ogg', 'suspense02');
+        createjs.Sound.registerSound('sounds/tchau.ogg', 'tchau');
+        createjs.Sound.registerSound('sounds/mgsalert.ogg', 'mgsalert');
 
 		 Reveal.addEventListener('slidechanged', function( event ) {
 			Modules.sound.checkCurrentSlide(event.currentSlide);
@@ -36,8 +37,11 @@ Modules.sound = {
 			instance = createjs.Sound.play('suspense02');
 	    	instance.volume = 0.5;
 		}  else if ($(currentSlide).hasClass('sound-tchau')) {
-			instance = createjs.Sound.play('tchau');
-	    	instance.volume = 0.5;
-		}
+            instance = createjs.Sound.play('tchau');
+            instance.volume = 0.5;
+        }  else if ($(currentSlide).hasClass('sound-mgsalert')) {
+            instance = createjs.Sound.play('mgsalert');
+            instance.volume = 0.5;
+        }
 	}
 };
