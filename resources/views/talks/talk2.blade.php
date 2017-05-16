@@ -1,6 +1,6 @@
 <!-- Slides EDA -->
 <!-- Edson José de Lima Junior-->
-<section>
+<section  data-on-start="@p2" data-slide-name="eda"  data-slide-uid="@edsonlimadev">
     <h1>Event Driven Architecture</h1>
     <h3>Um paralelo entre desenvolvimento de software e a extinção dos mamutes</h3>
     <h4>@edsonlimadev ou @dddwebdeveloper</h4>

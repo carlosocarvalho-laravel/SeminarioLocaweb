@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>5º Seminário Locaweb PHPSP</title>
+		<title>III TOI - Congresso Internacional em Tecnologia e Organização da Informação</title>
 
-		<meta name="description" content="5º Seminário Locaweb PHPSP">
-		<meta name="author" content="PHPSP">
+		<meta name="description" content="III TOI - Congresso Internacional em Tecnologia e Organização da Informação">
+		<meta name="author" content="ABRAINFO">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,12 +15,12 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/reveal.css?v={{time('now')}}">
         <link rel="stylesheet" href="css/diego.css">
         <link rel="stylesheet" href="css/marcel.css">
         <link rel="stylesheet" href="css/draw.css">
         <link href='https://fonts.googleapis.com/css?family=Raleway:700,900' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/theme/league.css" id="theme">
+        <link rel="stylesheet" href="css/theme/league.css?v={{time('now')}}" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -33,19 +33,16 @@
 	</head>
 
 	<body data-websockets-address="{{ $websocketsAddress }}" data-mode="{{ $mode }}">
-
+           
 		<div class="reveal">
             <div class="users-counter"></div>
-			<div class="slides">
-
+			<div class="slides" id="sliderContainer">
                 @include('talks.intro')
-
                 <!-- Title: Programação Funcional em PHP -->
                 <!-- Author: Marcel Gonçalves dos Santos -->
                 @include('talks.talk1')
 
 				@include('talks.intro')
-
                 <!-- Title: Arquitetura Orientada a Eventos -->
                 <!-- Author: Edson José de Lima Junior -->
                 @include('talks.talk2')
@@ -75,17 +72,24 @@
                 <!-- Title: Automatizando casas com PHP -->
                 <!-- Author: Diego Pires -->
                 @include('talks.talk6')
+                 
+                @include('talks.intro')
+                @include('talks.talk7')
+
 
 				@include('talks.intro')
+                <!-- pHAS -->
+               
                 @include('talks.draw')
 
 			</div>
 		</div>
 
         <?php if ($mode == 'presenter') : ?>
-            <input type="button" class="goto" />
+            <input type="button" class="goto" style="left:10px; bottom:10px;" />
         <?php endif; ?>
 
+           
         <img class="fullscreenimg" onclick="toggleFullScreen();" src="images/fullscreen.png" style="position: fixed; bottom: 1em; right: 1em; width:2em; z-index: 9999999;">
 
 		<script src="js/plugins/jquery.min.js"></script>
@@ -103,17 +107,7 @@
 
         <script>
             // Gambiarra marota que espera o carregamento dos módulos
-            setTimeout(function () {
-                Modules.goto.register('sorteio', 335);
-                Modules.goto.register('painel', 226);
-
-                Modules.goto.register(['funcional', '@marcelgsantos'], 1);
-                Modules.goto.register(['eda', '@edsonlimadev'], 86);
-                Modules.goto.register(['react', '@nawarian'], 118);
-                Modules.goto.register(['jwt', '@ivanrosolen'], 134);
-                Modules.goto.register(['psr7', '@danizord'], 176);
-                Modules.goto.register(['automação', '@diegopires'], 228);
-            }, 300);
+            
         </script>
 	</body>
 </html>

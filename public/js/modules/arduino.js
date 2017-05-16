@@ -1,53 +1,55 @@
 Modules.arduino = {
-	start: function() {
-		$(".button-arduino").on('tap click', function(e) {
-			e.preventDefault();
+    start: function() {
 
-			//ratchet.emit('arduino', {command: $(this).attr('data-value')});
-			$("#corAtual").html($(this).attr('data-value'));
-			objEnviar = {};
-			objEnviar.command = $(this).attr('data-value');
-			objEnviar.type = 'arduino';
-			Arduino.conn.send(JSON.stringify(objEnviar));
+        /*
+        $(".button-arduino").on('tap click', function(e) {
+            e.preventDefault();
 
-			$(".button-arduino").attr('disabled','disabled');
-			$(".button-arduino").addClass('classGray');
-			window.setTimeout(function() {
-				$(".button-arduino").removeAttr('disabled');
-				$(".button-arduino").removeClass('classGray');
-			}, 2500);
-		});
+            //ratchet.emit('arduino', {command: $(this).attr('data-value')});
+            $("#corAtual").html($(this).attr('data-value'));
+            objEnviar = {};
+            objEnviar.command = $(this).attr('data-value');
+            objEnviar.type = 'arduino';
+            Arduino.conn.send(JSON.stringify(objEnviar));
 
-		Arduino.conn = new WebSocket('ws://piresedias.com.br:8888');
-		Arduino.conn.onopen = function(e) {
-			console.log("Websocket Server Arduino OK!");
-		};
+            $(".button-arduino").attr('disabled', 'disabled');
+            $(".button-arduino").addClass('classGray');
+            window.setTimeout(function() {
+                $(".button-arduino").removeAttr('disabled');
+                $(".button-arduino").removeClass('classGray');
+            }, 2500);
+        });
 
-		Arduino.conn.onmessage = function(e) {
+        Arduino.conn = new WebSocket('ws://piresedias.com.br:8888');
+        Arduino.conn.onopen = function(e) {
+            console.log("Websocket Server Arduino OK!");
+        };
 
-			data = JSON.parse(e.data);
-			if (data.type == 'arduino') {
+        Arduino.conn.onmessage = function(e) {
 
-				$(".button-arduino").attr('disabled','disabled');
+            data = JSON.parse(e.data);
+            if (data.type == 'arduino') {
 
-				$(".button-arduino").addClass('classGray');
-				$("#corAtual").html(data.command);
+                $(".button-arduino").attr('disabled', 'disabled');
 
-				window.setTimeout(function() {
-					$(".button-arduino").removeAttr('disabled');
-					$(".button-arduino").removeClass('classGray');
-				}, 2500);
+                $(".button-arduino").addClass('classGray');
+                $("#corAtual").html(data.command);
 
-			}
-		};
+                window.setTimeout(function() {
+                    $(".button-arduino").removeAttr('disabled');
+                    $(".button-arduino").removeClass('classGray');
+                }, 2500);
 
-		ratchet.on(1, this.callback);
+            }
+        };
 
-	},
-	callback: function(data) {
-		if (data.type == 'arduino') {
-			$("#corAtual").html(data.command);
+        ratchet.on(1, this.callback);
+         */
+    },
+    callback: function(data) {
+        if (data.type == 'arduino') {
+            $("#corAtual").html(data.command);
 
-		}
-	},
+        }
+    },
 }

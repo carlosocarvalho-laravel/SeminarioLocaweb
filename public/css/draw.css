@@ -4,7 +4,8 @@
     width: 28%;
 }
 
-.medium-poll:nth-child(3), .medium-poll:nth-child(6) {
+.medium-poll:nth-child(3),
+.medium-poll:nth-child(6) {
     float: right;
     margin-right: 0px;
 }
@@ -23,10 +24,25 @@
 }
 
 .logos {
-	margin: 0 auto!important;
-	margin-bottom: 40px!important;
-	width: 780px!important;
+    margin: 0 auto!important;
+    margin-bottom: 40px!important;
+    width: 780px!important;
+    text-align: center;
 }
+
+.logos .logo {
+    border: 5px solid #777!important;
+    display: inline-block;
+    width: 40%;
+    height: 140px;
+    background-color: #fff;
+    background-size: 95%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/*
 
 .logo-locaweb, .logo-phpsp {
 	border: 5px solid #777!important;
@@ -38,15 +54,15 @@
 
 .logo-locaweb {
 	margin-right: 40px!important;
-}
+}*/
 
 .custom-links {
-	margin-top: 2em!important;
+    margin-top: 2em!important;
 }
 
 .reveal a.custom-link {
-	color: #fff;
-	font-family: 'League Gothic', Impact, sans-serif;
+    color: #fff;
+    font-family: 'League Gothic', Impact, sans-serif;
     font-weight: normal;
     font-size: 1.4em;
     line-height: 1.2;
@@ -56,12 +72,12 @@
 }
 
 .reveal a.custom-link:hover {
-	color: #ccc;
+    color: #ccc;
 }
 
 .wifi {
-	color: #fff;
-	font-family: 'League Gothic', Impact, sans-serif;
+    color: #fff;
+    font-family: 'League Gothic', Impact, sans-serif;
     font-weight: normal;
     font-size: 1.4em;
     line-height: 1.2;
@@ -73,6 +89,6 @@
     text-transform: uppercase;
 }
 
-.fullscreenimg{
+.fullscreenimg {
     width: 30px;
 }

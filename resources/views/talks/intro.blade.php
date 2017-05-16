@@ -1,15 +1,15 @@
 <section>
 	<div class="logos">
-		<img class="logo-locaweb" src="images/logo-locaweb.png">
-		<img class="logo-phpsp" src="images/logo-phpsp.png">
+	    <span class="logo" style="background-image:url('images/logo-abrainfo.png');"></span>
+		<span class="logo" style="background-image:url('images/logo-wide.svg');"></span>
 		<div style="clear: both"></div>
 	</div>
 
-	<h2>5º Seminário Locaweb PHPSP</h2>
+	<h3>III TOI - Congresso Internacional em Tecnologia e Organização da Informação</h3>
 
 	<p>
 		<?php if (strpos($host, 'jelasticlw') === false): ?>
-			<a class="custom-link" style="text-transform: lowercase" href="http://seminario.phpsp.org.br/">http://seminario.phpsp.org.br</a>
+			<a class="custom-link" style="text-transform: lowercase" href="http://seminario.modalbox.com.br/">http://seminario.modalbox.com.br</a>
 		<?php else: ?>
 			<a class="custom-link" style="text-transform: lowercase" href="http://seminariophpsp.jelasticlw.com.br//">http://seminariophpsp.jelasticlw.com.br</a>
 		<?php endif; ?>
@@ -17,11 +17,10 @@
 
 	<p class="custom-links">
 		<a class="custom-link" href="http://bit.ly/avalie-phpsp">Joind.in</a>
-		<a class="custom-link" href="https://github.com/PHPSP/docs/blob/master/codigo-de-conduta.md">Código de Conduta</a>
-		<a class="custom-link" href="http://bit.ly/slack-phpsp">Slack PHPSP</a>
+		<a class="custom-link" href="http://bit.ly/modalnetworks">Site Modal</a>
 	</p>
 
 	<p class="wifi">
-		<strong>Wi-fi:</strong> Locaweb/phpsp2016
+		<strong>Wi-fi:</strong> seminario/modalwhifi
 	</p>
 </section>

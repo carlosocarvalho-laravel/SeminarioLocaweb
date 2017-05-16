@@ -37,7 +37,8 @@ $app->get('/', function() use ($app) {
     if (strpos($host, 'jelasticlw') === false) {
         $websocketsAddress = $host . ':7888?session=' . $md5;
     }
-
+   
+   
     $data = [
         'host' => $_SERVER['HTTP_HOST'],
         'mode' => $mode,
@@ -47,9 +48,16 @@ $app->get('/', function() use ($app) {
     return view('talks', $data);
 });
 
+$app->get('/logout', function(){
+       Session::flush();
+       return redirect('/');
+});
+
 $app->post('/', function(Request $request) use ($app) {
     //O usuário é 'admin@admin.com.br' e a senha é 'phprules'?
-    if ('admin@admin.com.br' === $request->input('mail') && '4f71093ff7734f42da190f76eb62728bfbfb0984' === sha1($request->input('pass'))) {
+  
+
+    if ('admin@admin.com.br' === $request->input('mail') && '27da247ac3132070bfe88338846955adf41955fc' === sha1($request->input('pass'))) {
         $md5 = md5(Session::getId());
 
         //Grava na sessão que o visitante é o apresentador

@@ -1,6 +1,6 @@
 <!-- React Além dos Websockets -->
                 <!-- Nickolas "Nawarian" -->
-                <section id="react-nawarian">
+                <section id="react-nawarian" data-on-start="@p3" data-slide-name="react"  data-slide-uid="@nawarian">
                   <section>
                     <h2>
                       React além dos WebSockets

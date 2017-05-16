@@ -1,5 +1,5 @@
 <!-- slide-01 -->
-<section data-background="#424242">
+<section data-on-start="@p1" data-slide-name="funcional"  data-slide-uid="@marcelgsantos" data-background="#424242">
     <img data-src="images/talk1/slide-01.jpeg">
 </section>
 

@@ -1,5 +1,5 @@
 <!-- PALESTRA AUTOMAÇÃO RESIDENCIAL - DIEGO PIRES//-->
-                <section class="" id="inicio-diegopires">
+                <section class="" data-on-start="@p6" data-slide-name="automação"  data-slide-uid="@diegopires" id="inicio-diegopires">
                     <h1>Automação Residencial com PHP</h1>
                     <p>Utilizando Arduino e PHP para automatizar a sua residência</p>
                 </section>

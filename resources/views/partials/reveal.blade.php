@@ -1,7 +1,7 @@
 <script>
   var mode = $('body').attr('data-mode');
   var websocketsAddress = $('body').attr('data-websockets-address');
-
+  var time = new Date();
   var revealConfig = {
       controls: false,
       progress: false,
@@ -22,7 +22,7 @@
           { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
           { src: 'plugin/multiplex-ratchet/ratchet.js', async: true },
-          { src: 'js/code.min.js', async: true },
+          { src: 'js/code.min.js?v='+ time.getTime()  , async: true },
           { src: 'plugin/zoom-js/zoom.js', async: true }
           //{ src: 'plugin/notes/notes.js', async: true }
       ],
